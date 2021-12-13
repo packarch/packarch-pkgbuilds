@@ -35,7 +35,7 @@ build_pkgs () {
 		echo -e "Building ${pkg}..."
 		cd ${pkg} && makepkg -s && mv *.pkg.tar.zst "$PKGDIR"
 
-		if [[ "$pkg" == 'archcraft-lxdm' ]]; then
+		if [[ "$pkg" == 'packarch-lxdm' ]]; then
 			rm -rf src pkg lxdm-*
 		else
 			rm -rf src pkg

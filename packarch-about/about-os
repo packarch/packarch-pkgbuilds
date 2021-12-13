@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2021 Fabrice Corraire <antidote1911@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+## About Packarch
+
+yad --title='About Packarch' --window-icon='packarch-cyan' \
+	--about \
+	--pname='Packarch' \
+	--pversion='v21.09' \
+	--image='distributor-logo-packarch' \
+	--comments="Yet another minimal linux distribution, Based on Arch Linux." \
+	--copyright='Copyright 2020-2021, Fabrice Corraire <antidote1911@gmail.com>' \
+	--license='GPL3' \
+	--website='https://packarch.io' \
+	--website-label='packarch.io' \
+	--authors="Fabrice Corraire <antidote1911@gmail.com>"

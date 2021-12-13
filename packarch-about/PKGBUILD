@@ -1,0 +1,25 @@
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+
+pkgname=packarch-about
+pkgver=1.0
+pkgrel=1
+pkgdesc="About Packarch"
+url="https://github.com/packarch/packarch-packages"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+source=(about-os
+		about.desktop)
+
+sha256sums=('f3ddaa1d3cb4de4d9b4925b7cb4cb4338e1ce89ff0a05b1bb1a2528ef820bc45'
+            '9772a593f2464d822fd1e3e14c86e01fab83b6f9bbbebfb89f4ab39372ee9459')
+
+package() {
+	install -Dm 755 about-os   		${pkgdir}/usr/local/bin/about-os
+	install -Dm 644 about.desktop	${pkgdir}/usr/share/applications/about.desktop
+}
