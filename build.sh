@@ -35,8 +35,10 @@ build_pkgs () {
 		echo -e "Building ${pkg}..."
 		cd ${pkg} && makepkg -s && mv *.pkg.tar.zst "$PKGDIR"
 
-		if [[ "$pkg" == 'packarch-lxdm' ]]; then
-			rm -rf src pkg lxdm-*
+		if [[ "$pkg" == 'packarch-omz' ]]; then
+			rm -rf src pkg oh-my-zsh
+		elif [[ "$pkg" == 'packarch-vim' ]]; then
+			rm -rf src pkg vimrc
 		else
 			rm -rf src pkg
 		fi
