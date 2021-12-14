@@ -18,7 +18,6 @@ LIST=(archlinux-appstream-data-pamac
 	  cava
 	  colorpicker
 	  ksuperkey
-	  pyroom
 	  snapd
 	  snapd-glib
 	  toilet
