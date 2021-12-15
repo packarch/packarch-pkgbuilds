@@ -1,0 +1,23 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=packarch-grub-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default grub2 bootloader theme for Packarch"
+url="https://github.com/packarch/packarch-packages"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=('grub')
+conflicts=()
+groups=(packarch-grub-themes)
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find packarch -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/grub/themes/{}" \;)
+}
