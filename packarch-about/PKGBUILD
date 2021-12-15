@@ -16,7 +16,7 @@ options=(!strip !emptydirs)
 source=(about-os
 		about.desktop)
 
-sha256sums=('f3ddaa1d3cb4de4d9b4925b7cb4cb4338e1ce89ff0a05b1bb1a2528ef820bc45'
+sha256sums=('7bdfc1be7670aa5446188a89eb3de525bdd5daa49aeabdf5db4143b8bdc45908'
             '9772a593f2464d822fd1e3e14c86e01fab83b6f9bbbebfb89f4ab39372ee9459')
 
 package() {
