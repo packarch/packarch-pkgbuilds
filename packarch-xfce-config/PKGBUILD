@@ -32,7 +32,7 @@ package() {
 	chmod +x "$_styledir"/styles/*
 
 	# Copy configs files
-	cfgs=(dconf geany gtk-3.0 Kvantum neofetch qt5ct ranger Thunar xfce4)
+	cfgs=(dconf geany gtk-3.0 Kvantum neofetch qt5ct ranger Thunar xfce4 smplayer)
 	for cfg in "${cfgs[@]}"; do
 		cp -r ${srcdir}/"$cfg" 				"$_configdir"
 	done
