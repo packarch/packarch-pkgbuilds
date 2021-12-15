@@ -13,32 +13,10 @@ MAGENTA="$(printf '\033[35m')"  CYAN="$(printf '\033[36m')"  WHITE="$(printf '\0
 DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
-LIST=(archlinux-appstream-data-pamac
-	  blight
-	  cava
-	  colorpicker
+LIST=(cava
 	  ksuperkey
 	  snapd
-	  snapd-glib
-	  toilet
-	  tty-clock-git
-	  unimatrix-git
-	  xfce-polkit)
-	  #ckbcomp
-	  #mkinitcpio-openswap
-	  #i3lock-color
-	  #betterlockscreen
-	  #networkmanager-dmenu-git
-	  #obmenu-generator
-	  #perl-linux-desktopfiles
-	  #polybar
-	  #yay
-	  #picom-ibhagwan-git
-	  #timeshift
-	  #downgrade
-	  #pygtk
-	  #libglade
-	  #python2-gobject2)
+	  snapd-glib)
 
 # Sort packages
 PKGS=(`for i in "${LIST[@]}"; do echo $i; done | sort`)
