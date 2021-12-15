@@ -46,7 +46,7 @@ VERSION = '0.2'
 
 ## Modified for Packarch by Aditya Shakya <adi1090x@gmail.com>
 
-import ConfigParser
+import configparser
 import os
 import subprocess
 import sys
