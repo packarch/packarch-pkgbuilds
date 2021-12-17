@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Wave 
+Name=Theme: Wave 
 Comment=Wave Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Wave.sh
 Icon=gtk-theme-config

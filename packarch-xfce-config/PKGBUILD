@@ -30,6 +30,10 @@ package() {
 	# Copy style scripts & fix permissions
 	cp -r ${srcdir}/styles ${_styledir}
 	chmod +x "$_styledir"/styles/*
+	
+	# Copy xmenu scripts & fix permissions
+	cp -r ${srcdir}/xmenu ${_styledir}
+	chmod +x "$_styledir"/xmenu/*
 
 	# Copy configs files
 	cfgs=(dconf geany gtk-3.0 Kvantum neofetch qt5ct ranger Thunar xfce4 smplayer)

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Landscape
+Name=Theme: Landscape
 Comment=Landscape Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Landscape.sh
 Icon=gtk-theme-config

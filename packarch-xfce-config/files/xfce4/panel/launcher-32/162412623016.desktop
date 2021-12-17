@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Adaptive
+Name=Theme: Adaptive
 Comment=Adaptive Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Adaptive.sh
 Icon=gtk-theme-config

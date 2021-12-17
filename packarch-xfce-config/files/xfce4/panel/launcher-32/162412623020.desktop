@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Kiss
+Name=Theme: Kiss
 Comment=Kiss Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Kiss.sh
 Icon=gtk-theme-config

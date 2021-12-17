@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Default 
+Name=Theme: Default 
 Comment=Default Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Default.sh
 Icon=gtk-theme-config

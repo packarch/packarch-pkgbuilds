@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Light
+Name=Theme: Light
 Comment=Light Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Light.sh
 Icon=gtk-theme-config

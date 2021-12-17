@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Mountain
+Name=Theme: Mountain
 Comment=Mountain Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Mountain.sh
 Icon=gtk-theme-config

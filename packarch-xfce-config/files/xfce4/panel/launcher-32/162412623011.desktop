@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Forest 
+Name=Theme: Forest 
 Comment=Forest Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Forest.sh
 Icon=gtk-theme-config

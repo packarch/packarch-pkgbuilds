@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Tealize
+Name=Theme: Tealize
 Comment=Tealize Style for XFCE Desktop
 Exec=/usr/share/packarch/styles/Tealize.sh
 Icon=gtk-theme-config
