@@ -39,6 +39,7 @@ package() {
 	cp -r ${srcdir}/qt5ct 				"$_configdir"
 	cp -r ${srcdir}/ranger 				"$_configdir"
 	cp -r ${srcdir}/rofi 				"$_configdir"
+	cp -r ${srcdir}/smplayer 			"$_configdir"
 	install -Dm 644 mimeapps.list		"$_configdir"/mimeapps.list
 
 	cp -r ${srcdir}/.local 				"$_skeldir"
