@@ -24,7 +24,7 @@ change_polybar() {
 }
 
 # rofi --------------------------------------
-change_rofi() {		
+change_rofi() {
 	sed -i -e "s/STYLE=.*/STYLE=\"$1\"/g" 						${rofi_path}/bin/music ${rofi_path}/bin/network ${rofi_path}/bin/screenshot ${rofi_path}/bin/runner
 	sed -i -e "s/DIR=.*/DIR=\"$1\"/g" 							${rofi_path}/bin/launcher ${rofi_path}/bin/powermenu
 	sed -i -e 's/STYLE=.*/STYLE="launcher"/g' 					${rofi_path}/bin/launcher
@@ -113,10 +113,10 @@ change_appearance() {
 	xfconf-query -c xsettings -p /Net/IconThemeName -s "$2"
 	xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "$3"
 	xfconf-query -c xsettings -p /Gtk/FontName -s "$4"
-	
+
 	if [[ -f "$HOME"/.icons/default/index.theme ]]; then
 		sed -i -e "s/Inherits=.*/Inherits=$3/g" "$HOME"/.icons/default/index.theme
-	fi	
+	fi
 }
 
 # openbox -----------------------------------
@@ -205,33 +205,6 @@ change_dunst() {
 	pkill dunst && dunst &
 }
 
-# Plank -------------------------------------
-change_dock() {
-	cat > "$HOME"/.cache/plank.conf <<- _EOF_
-		[dock1]
-		alignment='center'
-		auto-pinning=true
-		current-workspace-only=false
-		dock-items=['xfce-settings-manager.dockitem', 'Alacritty.dockitem', 'thunar.dockitem', 'firefox.dockitem', 'geany.dockitem']
-		hide-delay=0
-		hide-mode='auto'
-		icon-size=32
-		items-alignment='center'
-		lock-items=false
-		monitor=''
-		offset=0
-		pinned-only=false
-		position='bottom'
-		pressure-reveal=false
-		show-dock-item=false
-		theme='Transparent'
-		tooltips-enabled=true
-		unhide-delay=0
-		zoom-enabled=true
-		zoom-percent=120
-	_EOF_
-}
-
 # compositor --------------------------------
 compositor() {
 	comp_file="$HOME/.config/picom.conf"
@@ -247,7 +220,7 @@ compositor() {
 
 	# Rounded Corners
 	sed -i -e "s/backend = .*/backend = \"$backend\";/g" 				${comp_file}
-	sed -i -e "s/corner-radius = .*/corner-radius = $cradius;/g" 		${comp_file}	
+	sed -i -e "s/corner-radius = .*/corner-radius = $cradius;/g" 		${comp_file}
 
 	# Shadows
 	sed -i -e "s/shadow-radius = .*/shadow-radius = $shadow_r;/g" 		${comp_file}
@@ -263,7 +236,7 @@ compositor() {
 
 # notify ------------------------------------
 notify_user() {
-	local style=`basename $0` 
+	local style=`basename $0`
 	dunstify -u normal --replace=699 -i /usr/share/packarch/icons/dunst/themes.png "Applying Style : ${style%.*}"
 }
 
@@ -295,13 +268,11 @@ change_geany 'metallic-bottle' 'JetBrains Mono 10'
 change_appearance 'White' 'Zafiro-Dark' 'Qogirr' 'Iosevka 10'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'White' 'LC' 'JetBrains Mono' '10' 'menu-minimal.xml' && openbox --reconfigure
+obconfig 'White' 'LC' 'JetBrains Mono' '10' 'menu-icons.xml' && openbox --reconfigure
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '280x50-10+50' 'JetBrains Mono 10' '0'
 
-# Paste settings in funct (PLANK)
-change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/docks/
 
 # Change compositor settings
 #compositor 'glx' '0' '0 0 0 0' 'none 0'

@@ -35,7 +35,6 @@ package() {
 	cp -r ${srcdir}/leafpad 			"$_configdir"
 	cp -r ${srcdir}/neofetch 			"$_configdir"
 	cp -r ${srcdir}/polybar 			"$_configdir"
-	cp -r ${srcdir}/pyroom 				"$_configdir"
 	cp -r ${srcdir}/qt5ct 				"$_configdir"
 	cp -r ${srcdir}/ranger 				"$_configdir"
 	cp -r ${srcdir}/rofi 				"$_configdir"

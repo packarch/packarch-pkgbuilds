@@ -1,10 +1,10 @@
-# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
 
 pkgname=packarch-openbox
 pkgver=1.0
 pkgrel=2
 pkgdesc="Openbox WM Configurations for Packarch"
-url="https://github.com/packarch-os/packarch-openbox"
+url="https://github.com/packarch/packarch-openbox"
 arch=('any')
 license=('GPL3')
 makedepends=()
@@ -37,7 +37,6 @@ package() {
 	cp -r ${srcdir}/networkmanager-dmenu 	"$_configdir"
 	cp -r ${srcdir}/nitrogen 				"$_configdir"
 	cp -r ${srcdir}/obmenu-generator 		"$_configdir"
-	cp -r ${srcdir}/plank 					"$_configdir"
 	cp -r ${srcdir}/Thunar 					"$_configdir"
 	cp -r ${srcdir}/xfce4 					"$_configdir"
 	cp -r ${srcdir}/zentile 				"$_configdir"

@@ -14,7 +14,7 @@
 		</item>
 		<item label="File Manager">
 			<action name="Execute">
-				<command>thunar</command>
+				<command>pcmanfm</command>
 			</action>
 		</item>
 		<item label="Web Browser">
