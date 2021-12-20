@@ -13,9 +13,8 @@ nitrogen --restore
 xfsettingsd &
 
 ## polkit agent
-if [[ ! `pidof xfce-polkit` ]]; then
-	/usr/lib/xfce-polkit/xfce-polkit &
-fi
+/usr/lib/xfce-polkit/xfce-polkit &
+
 
 ## Enable power management
 xfce4-power-manager &
