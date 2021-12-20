@@ -41,7 +41,6 @@ package() {
 	cp -r ${srcdir}/smplayer 			"$_configdir"
 	install -Dm 644 mimeapps.list		"$_configdir"/mimeapps.list
 
-	cp -r ${srcdir}/.local 				"$_skeldir"
 	cp -r ${srcdir}/.mpd 				"$_skeldir"
 	cp -r ${srcdir}/.ncmpcpp 			"$_skeldir"
 	install -Dm 644 .dmrc				"$_skeldir"/.dmrc
