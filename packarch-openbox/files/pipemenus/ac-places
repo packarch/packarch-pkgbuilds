@@ -7,7 +7,7 @@
 
 readonly terminal=alacritty
 readonly text_editor=geany
-readonly open_folder_cmd=thunar
+readonly open_folder_cmd=pcmanfm
 readonly default_open_cmd=exo-open
 readonly recent_script=/usr/share/packarch/openbox/pipemenus/ac-recent-files
 

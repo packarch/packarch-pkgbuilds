@@ -43,6 +43,7 @@ package() {
 
 	cp -r ${srcdir}/.mpd 				"$_skeldir"
 	cp -r ${srcdir}/.ncmpcpp 			"$_skeldir"
+	cp -r ${srcdir}/.local	 			"$_skeldir"
 	install -Dm 644 .dmrc				"$_skeldir"/.dmrc
 	install -Dm 644 .face				"$_skeldir"/.face
 	install -Dm 644 .gtkrc-2.0			"$_skeldir"/.gtkrc-2.0
