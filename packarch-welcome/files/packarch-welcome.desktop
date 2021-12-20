@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Welcome To Packarch
+Comment=Startup application for Packarch
+Exec=packarch-welcome
+Icon=packarch-yellow
+Type=Application
+Categories=System;

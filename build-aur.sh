@@ -16,7 +16,13 @@ PKGDIR="$DIR/packages_aur"
 LIST=(cava
 	  ksuperkey
 	  snapd
-	  snapd-glib)
+	  snapd-glib
+	  blight
+	  colorpicker
+	  toilet
+	  tty-clock-git
+	  unimatrix-git
+	  xfce-polkit)
 
 # Sort packages
 PKGS=(`for i in "${LIST[@]}"; do echo $i; done | sort`)
