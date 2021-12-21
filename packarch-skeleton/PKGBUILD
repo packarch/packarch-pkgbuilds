@@ -1,10 +1,10 @@
-# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
 
 pkgname=packarch-skeleton
 pkgver=1.0
 pkgrel=1
 pkgdesc="Base Configurations for Packarch"
-url="https://github.com/packarch-os/packarch-skeleton"
+url="https://github.com/packarch/packarch-pkgbuild"
 arch=('any')
 license=('GPL3')
 makedepends=()

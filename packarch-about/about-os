@@ -5,12 +5,12 @@
 
 ## About Packarch
 
-yad --title='About Packarch' --window-icon='packarch-cyan' \
+yad --title='A Propos de Packarch' --window-icon='packarch-cyan' \
 	--about \
 	--pname='Packarch' \
 	--pversion='v21.09' \
 	--image='distributor-logo-packarch' \
-	--comments="Yet another minimal linux distribution, Based on Arch Linux." \
+	--comments="Distribution Française Custom, Basée sur Arch Linux." \
 	--copyright='Copyright 2020-2021, Fabrice Corraire <antidote1911@gmail.com>' \
 	--license='GPL3' \
 	--website='https://github.com/packarch' \

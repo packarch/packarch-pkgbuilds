@@ -1,2 +1,0 @@
-# packarch-openbox
- // Configuration : Openbox
