@@ -13,7 +13,8 @@ MAGENTA="$(printf '\033[35m')"  CYAN="$(printf '\033[36m')"  WHITE="$(printf '\0
 DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
-LIST=(cava
+LIST=(polybar-git
+	  cava
 	  ksuperkey
 	  snapd
 	  snapd-glib
