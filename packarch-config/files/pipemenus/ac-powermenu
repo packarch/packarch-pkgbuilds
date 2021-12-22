@@ -13,7 +13,7 @@ cdialog () {
 rofi -dmenu\
     -i\
     -no-fixed-num-lines\
-    -p "Etes Vous Certain ? : "\
+    -p "Vous Confirmez ? "\
     -theme "$DIR"/confirm.rasi
 }
 
