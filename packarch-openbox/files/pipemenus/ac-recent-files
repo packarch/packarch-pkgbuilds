@@ -75,7 +75,7 @@ files=$(perl -MURI::Escape -e 'print uri_unescape($ARGV[0]);' "$files")
 output='<openbox_pipe_menu>
 '"$files"'
 <separator/>
-  <item label="Clear Recent Files">
+  <item label="Vider Fichiers Récents">
     <action name="Execute">
       <command>&apos;'"$0"'&apos; --clear</command>
     </action>

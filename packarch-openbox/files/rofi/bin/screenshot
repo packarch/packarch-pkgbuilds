@@ -21,26 +21,26 @@ if [[ "$layout" == "TRUE" ]]; then
 	infive=""
 	inten=""
 else
-	screen=" Capture Desktop"
-	area=" Capture Area"
-	window=" Capture Window"
-	infive=" Take in 5s"
-	inten=" Take in 10s"
+	screen=" Bureau Entier"
+	area=" Zone Sélectionné"
+	window=" Fenêtre sélectionné"
+	infive=" Bureau Dans 5s"
+	inten=" Bureau Dans 10s"
 fi
 
 # notify
 notify_user () {
 	if [[ -e "$dir/$file" ]]; then
-		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Saved in $dir"
+		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Sauvegardé Dans $dir"
 	else
-		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Screenshot Deleted."
+		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Screenshot Supprimé."
 	fi
 }
 
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Taking shot in : $sec"
+		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Screenshot Dans : $sec"
 		sleep 1
 	done
 }

@@ -27,7 +27,7 @@ fi
 
 menuStart
 menuItem 'Simple' "$0 menu-simple.xml"
-menuItem 'Iconic' "$0 menu-icons.xml"
-menuItem 'Glyphs' "$0 menu-glyphs.xml"
+menuItem 'Icones' "$0 menu-icons.xml"
+menuItem 'Glyphes' "$0 menu-glyphs.xml"
 menuItem 'Minimal' "$0 menu-minimal.xml"
 menuEnd

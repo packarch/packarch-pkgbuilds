@@ -61,14 +61,14 @@ files=('/boot/grub/grub.cfg'
 # Generate menu
 menu() {
 	menuStart
-	menuSeparator 'Directories'
+	menuSeparator 'Dossiers'
 	for dir in "${dirs[@]}"; do
-		menuItem "Go To : $dir" "$0 'cd $dir'"
+		menuItem "Aller à : $dir" "$0 'cd $dir'"
 	done
 
-	menuSeparator 'Files'
+	menuSeparator 'Fichiers'
 	for file in "${files[@]}"; do
-		menuItem "Edit : $file" "$0 'sudo geany $file'"
+		menuItem "Editer : $file" "$0 'sudo geany $file'"
 	done
 
 	menuEnd

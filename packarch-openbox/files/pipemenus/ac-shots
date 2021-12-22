@@ -20,16 +20,16 @@ fi
 # notify
 notify_user () {
 	if [[ -e "$dir/$file" ]]; then
-		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Saved in $dir"
+		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Enregistré dans $dir"
 	else
-		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Screenshot Deleted."
+		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/picture.png "Screenshot Supprimé."
 	fi
 }
 
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Taking shot in : $sec"
+		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Screenshot Dans : $sec"
 		sleep 1
 	done
 }
@@ -78,11 +78,11 @@ elif [[ "$1" == "--area" ]]; then
 	shotarea
 else
     menuStart
-        menuItem 'Screenshot Now' "$0 --now"
-        menuItem 'Screenshot In 5s' "$0 --in5"
-        menuItem 'Screenshot In 10s' "$0 --in10"
-        menuItem 'Screenshot Area' "$0 --area"
-        menuItem 'Screenshot Window' "$0 --win"
+        menuItem 'Instantané' "$0 --now"
+        menuItem 'Dans 5s' "$0 --in5"
+        menuItem 'Dans 10s' "$0 --in10"
+        menuItem 'Zone Sélectionné' "$0 --area"
+        menuItem 'Fenêtre Sélectionné' "$0 --win"
     menuEnd
 fi
 

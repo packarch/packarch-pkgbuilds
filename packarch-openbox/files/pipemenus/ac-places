@@ -64,8 +64,8 @@ case $1 in
         output='<openbox_pipe_menu>'
         if [[ -x $recent_script ]]; then
             output="$output
-  <separator label=\"Recently opened...\"/>
-  <menu execute=\"$recent_script\" id=\"recent\" label=\"files\"/>"
+  <separator label=\"Récemment ouverts...\"/>
+  <menu execute=\"$recent_script\" id=\"recent\" label=\"fichiers\"/>"
         else
             echo "$0 : cannot find executable script $recent_script" >&2
         fi
@@ -90,7 +90,7 @@ esac
 
 output="$output
   <separator label=\"$pathe\"/>
-  <item label=\"Browse here...\">
+  <item label=\"Parcourir ici...\">
     <action name=\"Execute\">
       <command>&apos;$open_folder_cmd&apos; &apos;$pathe_apos&apos;</command>
     </action>

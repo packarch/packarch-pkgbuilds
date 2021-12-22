@@ -6,7 +6,7 @@
 ## Openbox Pipemenu To Generate Wallpapers.
 
 ## Variables
-DIR="$HOME/Pictures/Canvas"
+DIR="`xdg-user-dir PICTURES`/generated_wall"
 SIZE="1366x768"
 PSIZE="430x290"
 NAME="Canvas_$(date +%Y-%m-%d_%I-%M-%S).png"
@@ -81,9 +81,9 @@ esac
 ## Wallpaper Setter
 
 set_bg() {
-	yad --title='Set As Wallpaper' --geometry="$PSIZE" --picture --size=fit --filename="$DIR/$NAME" \
-	--button=No:1 \
-	--button="Yes":2 \
+	yad --title='Appliquer Wallpaper' --geometry="$PSIZE" --picture --size=fit --filename="$DIR/$NAME" \
+	--button=Non:1 \
+	--button="Oui":2 \
 
 	ANS=$?
 
@@ -97,16 +97,16 @@ set_bg() {
 ## Pick the colors
 color_picker() {
 	if [[ "$SOLID" == "true" ]]; then
-		COLOR=$(yad --title='Pick A Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		COLOR=$(yad --title='Choisir Couleur' --color --mode=hex --button=Annuler:1 --button=Selection:0)
 	elif [[ "$GRADIENT" == "true" ]] || [[ "$RGRADIENT" == "true" ]] || [[ "$TGRADIENT" == "true" ]]; then
-		color1=$(yad --title='Pick First Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
-		color2=$(yad --title='Pick Second Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		color1=$(yad --title='Choisir Couleur 1' --color --mode=hex --button=Annuler:1 --button=Selection:0)
+		color2=$(yad --title='Choisir Couleur 2' --color --mode=hex --button=Annuler:1 --button=Selection:0)
 		COLOR="$color1-$color2"
 	elif [[ "$BGRADIENT" == "true" ]]; then
-		color1=$(yad --title='Pick First Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
-		color2=$(yad --title='Pick Second Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
-		color3=$(yad --title='Pick Third Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
-		color4=$(yad --title='Pick Fourth Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+		color1=$(yad --title='Choisir Couleur 1' --color --mode=hex --button=Annuler:1 --button=Selection:0)
+		color2=$(yad --title='Choisir Couleur 2' --color --mode=hex --button=Annuler:1 --button=Selection:0)
+		color3=$(yad --title='Choisir Couleur 3' --color --mode=hex --button=Annuler:1 --button=Selection:0)
+		color4=$(yad --title='Choisir Couleur 4' --color --mode=hex --button=Annuler:1 --button=Selection:0)
 	fi
 }
 
@@ -157,7 +157,7 @@ radial_gradient() {
 		SHAPE="$RSHAPE"
 	else
 		color_picker
-		SHAPE=$(yad --title='Choose Shape' --width=180 --height=145 --button=Ok:0 --list --no-headers --column=Shape diagonal ellipse maximum minimum | tr -d '|')
+		SHAPE=$(yad --title='Choisir Forme' --width=180 --height=145 --button=Ok:0 --list --no-headers --column=Shape diagonal ellipse maximum minimum | tr -d '|')
 		ANGLE=$(yad --geometry=250x85 --title='Rotation Angle' --button=Ok:0 --entry --entry-text='45' --numeric)
 	fi
 	convert -size "$SIZE" -define gradient:extent="$SHAPE" -define gradient:angle="$ANGLE" radial-gradient:"$COLOR" "$DIR/$NAME"
@@ -176,7 +176,7 @@ twisted_gradient() {
 		TWIST="$RNUM"
 	else
 		color_picker
-		TWIST=$(yad --geometry=250x85 --title='Twisting Amount' --button=Ok:0 --entry --entry-text='200' --numeric)
+		TWIST=$(yad --geometry=250x85 --title='Quantité de Twist' --button=Ok:0 --entry --entry-text='200' --numeric)
 	fi
 	convert -size "$SIZE" gradient:"$COLOR" -swirl "$TWIST" "$DIR/$NAME"
 	set_bg
@@ -202,10 +202,10 @@ bilinear_gradient() {
 		fi
 	else
 		color_picker
-		ANS=$(yad --title='Choose Style' --width=190 --height=100 --button=Ok:0 --list --no-headers --column=Style Smooth Regular | tr -d '|')
+		ANS=$(yad --title='Choisir Style' --width=190 --height=100 --button=Ok:0 --list --no-headers --column=Style Lissé Régulier | tr -d '|')
 	fi
 	if [[ $ANS == "Smooth" ]] || [[ $ANS == "smooth" ]]; then
-		yad --title='Generating' --width=200 --height=60 --text='Processing, Please Wait...' --button=Ok:0 --timeout=2
+		yad --title='Création' --width=200 --height=60 --text='Calculs en cours, Merci de patienter...' --button=Ok:0 --timeout=2
 		convert \( xc:"$color1" xc:"$color2" +append \) \( xc:"$color3" xc:"$color4" +append \) -append -size "$SIZE" xc: +swap  -fx 'v.p{i/(w-1),j/(h-1)}' "$DIR/$NAME"
 	else
 		convert \( xc:"$color1" xc:"$color2" +append \) \( xc:"$color3" xc:"$color4" +append \) -append -filter triangle -resize "$SIZE"\! "$DIR/$NAME"
@@ -230,19 +230,19 @@ plasma() {
 			COLOR="$RCOLOR"
 		fi
 	else
-		ANS=$(yad --title='Choose Style' --width=190 --height=150 --button=Ok:0 --list --no-headers --column=Style Random Twisted 'Custom colors' | tr -d '|')
+		ANS=$(yad --title='Choisir Style' --width=190 --height=150 --button=Ok:0 --list --no-headers --column=Aléatoire Twist 'Choisir Couleurs' | tr -d '|')
 	fi
 	if [[ $ANS == "Random" ]] || [[ $ANS == "random" ]]; then
 		convert -size "$SIZE" plasma: "$DIR/$NAME"
 	elif [[ $ANS == "Twisted" ]] || [[ $ANS == "twisted" ]]; then
 		if [[ "$RANDOMIZE" != "true" ]]; then
-			TWIST=$(yad --geometry=250x85 --title='Twisting Amount' --button=Ok:0 --entry --entry-text='200' --numeric)
+			TWIST=$(yad --geometry=250x85 --title='Quantité de Twist' --button=Ok:0 --entry --entry-text='200' --numeric)
 		fi
 		convert -size "$SIZE" plasma:fractal -swirl "$TWIST" "$DIR/$NAME"
 	else
 		if [[ "$RANDOMIZE" != "true" ]]; then
-			color1=$(yad --title='Pick First Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
-			color2=$(yad --title='Pick Second Color' --color --mode=hex --button=Cancel:1 --button=Select:0)
+			color1=$(yad --title='Choix Couleur 1' --color --mode=hex --button=Annuler:1 --button=Selection:0)
+			color2=$(yad --title='Choix Couleur 2' --color --mode=hex --button=Annuler:1 --button=Selection:0)
 			COLOR="$color1-$color2"
 		fi
 		convert -size "$SIZE" plasma:"$COLOR" "$DIR/$NAME"
@@ -256,7 +256,7 @@ blured_noise() {
 		get_random_number "30"
 		BLUR="$RNUM"
 	else
-		BLUR=$(yad --geometry=250x85 --title='Blur strength' --button=Ok:0 --entry --entry-text='12' --numeric)
+		BLUR=$(yad --geometry=250x85 --title='Quantité de Flou' --button=Ok:0 --entry --entry-text='12' --numeric)
 	fi
 	convert -size "100x56" xc: +noise Random "/tmp/noise.png"
 	convert "/tmp/noise.png" -virtual-pixel tile -blur 0x"$BLUR" -auto-level -resize "$SIZE" "$DIR/$NAME"	
@@ -355,15 +355,15 @@ elif [[ "$1" == "--bgradient" ]]; then
 	bilinear_gradient
 else
     menuStart
-        menuItem 'Random Wallpaper' "$0 --random"
-        menuItem 'Blurred Wallpaper' "$0 --blur"
-        menuItem 'Solid Wallpaper' "$0 --solid"
-        menuItem 'Plasma Wallpaper' "$0 --plasma"
-        menuSeparator 'Gradient'
-        menuItem 'Linear Gradient' "$0 --lgradient"
-        menuItem 'Radial Gradient' "$0 --rgradient"
-        menuItem 'Twisted Gradient' "$0 --tgradient"
-        menuItem 'Bilinear Gradient' "$0 --bgradient"
+        menuItem 'Aléatoire' "$0 --random"
+        menuItem 'Flouté' "$0 --blur"
+        menuItem 'Couleur Unie' "$0 --solid"
+        menuItem 'Plasma' "$0 --plasma"
+        menuSeparator 'Dégradés'
+        menuItem 'Dégradé Linéaire' "$0 --lgradient"
+        menuItem 'Dégradé Radial' "$0 --rgradient"
+        menuItem 'Dégradé Twist' "$0 --tgradient"
+        menuItem 'Dégradé Bilinéaire' "$0 --bgradient"
     menuEnd
     exit 0
 fi

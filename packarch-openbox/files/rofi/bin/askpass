@@ -10,5 +10,5 @@ rofi -dmenu\
      -password\
      -i\
      -no-fixed-num-lines\
-     -p "User Password: "\
+     -p "Mot De Passe Utilisateur: "\
      -theme "$DIR"/askpass.rasi
