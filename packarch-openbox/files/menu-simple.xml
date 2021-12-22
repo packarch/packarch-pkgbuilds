@@ -147,7 +147,7 @@
 				</action>
 			</item>
 			<separator/>
-			<item label="Réglages Energie"">
+			<item label="Réglages Energie">
 				<action name="Execute">
 					<command>xfce4-power-manager-settings</command>
 				</action>
