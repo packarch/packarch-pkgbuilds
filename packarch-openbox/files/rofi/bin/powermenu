@@ -53,7 +53,7 @@ rdialog () {
 rofi -dmenu\
     -i\
     -no-fixed-num-lines\
-    -p "Etes vous certain ? : "\
+    -p "Etes Vous Certain ? : "\
     -theme "$ddir/confirm.rasi"
 }
 
