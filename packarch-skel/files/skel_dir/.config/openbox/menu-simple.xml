@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> -->
+<!-- Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 -->
+<!DOCTYPE menu [
+  <!ENTITY pipes "/usr/share/packarch/openbox/pipemenus">
+]>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
+  <menu id="root-menu" title="Menu" label="Openbox 3">
+<!--	<separator label="Main Menu"/>  -->
+		<item label="Terminal">
+			<action name="Execute">
+				<command>alacritty</command>
+			</action>
+		</item>
+		<item label="Gestionaire de fichiers">
+			<action name="Execute">
+				<command>pcmanfm</command>
+			</action>
+		</item>
+		<item label="Navigateur Internet">
+			<action name="Execute">
+				<command>firefox</command>
+			</action>
+		</item>
+		<item label="Editeur de Texte">
+			<action name="Execute">
+				<command>geany</command>
+			</action>
+		</item>
+		<separator/>
+		<menu id="app-menu" execute="obmenu-generator" label="Applications"/>
+		<menu id="apps-as-root" label="Apps As Root">
+			<item label="Terminal (alacritty)">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root alacritty</execute>
+				</action>
+			</item>
+			<item label="Gestionaire de fichiers (pcmanfm)">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root 'dbus-run-session pcmanfm'</execute>
+				</action>
+			</item>
+			<item label="Editeur de Texte (geany)">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root geany</execute>
+				</action>
+			</item>
+			<separator/>
+			<item label="Gestionaire de fichiers CLI (ranger)">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root 'alacritty -e ranger'</execute>
+				</action>
+			</item>
+			<item label="Editeur de Texte CLI (vim)">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root 'alacritty -e vim'</execute>
+				</action>
+			</item>
+			<separator/>
+			<item label="Lxappearance">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root 'lxappearance'</execute>
+				</action>
+			</item>
+			<item label="QT5 Settings">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root 'qt5ct'</execute>
+				</action>
+			</item>
+			<item label="kvantum Manager">
+				<action name="Execute">
+					<execute>~/.config/openbox/rofi/bin/apps_as_root 'kvantummanager'</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="quick-commands" label="CMDs Rapides">
+			<separator label="Commandes Rapides"/>
+			<menu id="PacmanPipeMenu" execute="&pipes;/ac-pacman" label="Gestion Packages"/>
+			<menu id="FilesPipeMenu" execute="&pipes;/ac-files" label="Fichiers &amp; Dossiers"/>
+			<menu id="SysdPipeMenu" execute="&pipes;/ac-systemd" label="Systemd &amp; Services"/>
+		</menu>
+		<menu id="ac-shots" execute="&pipes;/ac-shots" label="Screenshot"/>
+		<menu id="ac-record" execute="&pipes;/ac-record" label="Enregistreur Ecran"/>
+		<separator/>
+		<menu id="ac-places" execute="&pipes;/ac-places --recent ~/" label="Parcourir"/>
+		<menu id="ac-recent" execute="&pipes;/ac-recent-files" label="Fichiers Récents"/>
+		<menu id="preferences" label="Preferences">
+			<menu id="obconfig" label="Openbox">
+				<menu id="ac-ob-menu" execute="&pipes;/ac-ob-menu" label="Style du Menu"/>
+				<item label="Préférences">
+					<action name="Execute">
+						<command>obconf</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="Editer menu.xml">
+					<action name="Execute">
+						<command>exo-open ~/.config/openbox/menu-simple.xml</command>
+					</action>
+				</item>
+				<item label="Editer rc.xml">
+					<action name="Execute">
+						<command>exo-open ~/.config/openbox/rc.xml</command>
+					</action>
+				</item>
+				<item label="Editer autostart">
+					<action name="Execute">
+						<command>exo-open ~/.config/openbox/autostart</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="Reconfigurer">
+					<action name="Reconfigure"/>
+				</item>
+				<item label="Redémarrer">
+					<action name="Restart"/>
+				</item>
+			</menu>
+			<menu id="CompositingPipeMenu" execute="&pipes;/ac-compositor" label="Compositeur"/>
+			<separator/>
+			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Choix du Style"/>
+			<menu id="FontPipeMenu" execute="&pipes;/ac-change-fonts" label="Choix des Fontes"/>
+			<menu id="LauncherPipeMenu" execute="&pipes;/ac-change-launcher" label="Choix du Launcher"/>
+			<menu id="PmenuPipeMenu" execute="&pipes;/ac-change-powermenu" label="Choix du Powermenu"/>
+			<menu id="PolybarPipeMenu" execute="&pipes;/ac-change-polybar" label="Choix du Theme de Polybar"/>
+			<menu id="SchemePipeMenu" execute="&pipes;/ac-change-scheme" label="Choix des Couleurs du Terminal"/>
+			<separator/>
+			<menu id="CanvasPipeMenu" execute="&pipes;/ac-canvas" label="Générer un Wallpaper"/>
+			<item label="Changer de Wallpaper">
+				<action name="Execute">
+					<command>nitrogen</command>
+				</action>
+			</item>
+			<item label="Réglages Apparence Xfce">
+				<action name="Execute">
+					<command>xfce4-appearance-settings</command>
+				</action>
+			</item>
+			<item label="Réglages QT5">
+				<action name="Execute">
+					<command>qt5ct</command>
+				</action>
+			</item>
+			<item label="Réglages Kvantum">
+				<action name="Execute">
+					<command>kvantummanager</command>
+				</action>
+			</item>
+			<separator/>
+			<item label="Réglages Energie">
+				<action name="Execute">
+					<command>xfce4-power-manager-settings</command>
+				</action>
+			</item>
+			<item label="Réglages Audio">
+				<action name="Execute">
+					<command>pavucontrol</command>
+				</action>
+			</item>
+			<item label="Réglages Xfce">
+				<action name="Execute">
+					<command>xfce4-settings-manager</command>
+				</action>
+			</item>
+		</menu>
+		<menu id="KeybindsPipeMenu" execute="&pipes;/ac-kb-pipemenu" label="Raccourcis Clavier"/>
+		<separator/>
+		<item label="Verrouiller Ecran">
+			<action name="Execute">
+				<command>betterlockscreen --lock</command>
+			</action>
+		</item>
+		<menu id="Exit" label="Système">
+				<menu id="SystemPipeMenu" execute="&pipes;/ac-sysinfo" label="Infos"/>
+				<item label="Déconnexion">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --logout</command>
+					</action>
+				</item>
+				<item label="Veille">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --suspent</command>
+					</action>
+				</item>
+				<item label="Rebooter">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --reboot</command>
+					</action>
+				</item>
+				<item label="Eteindre">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --shutdown</command>
+					</action>
+				</item>
+		</menu>
+	</menu>
+</openbox_menu>
+<!-- vim:sw=2
+-->

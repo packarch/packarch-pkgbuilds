@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> -->
+<!-- Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 -->
+<!DOCTYPE menu [
+  <!ENTITY pipes "/usr/share/packarch/openbox/pipemenus">
+]>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
+  <menu id="root-menu" title="Menu" label="Openbox 3">
+<!--	<separator label="Main Menu"/>  -->
+		<item label="Terminal">
+			<action name="Execute">
+				<command>alacritty</command>
+			</action>
+		</item>
+		<item label="Gestionaire de fichiers">
+			<action name="Execute">
+				<command>pcmanfm</command>
+			</action>
+		</item>
+		<item label="Navigateur Internet">
+			<action name="Execute">
+				<command>firefox</command>
+			</action>
+		</item>
+		<item label="Editeur de Texte">
+			<action name="Execute">
+				<command>geany</command>
+			</action>
+		</item>
+		<separator/>
+		<menu id="app-menu" execute="obmenu-generator" label="Applications"/>
+		<menu id="preferences" label="Preferences">
+			<menu id="obconfig" label="Openbox">
+				<menu id="ac-ob-menu" execute="&pipes;/ac-ob-menu" label="Style du Menu"/>
+				<item label="Préférences">
+					<action name="Execute">
+						<command>obconf</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="Editer menu.xml">
+					<action name="Execute">
+						<command>exo-open ~/.config/openbox/menu-minimal.xml</command>
+					</action>
+				</item>
+				<item label="Editer rc.xml">
+					<action name="Execute">
+						<command>exo-open ~/.config/openbox/rc.xml</command>
+					</action>
+				</item>
+				<item label="Editer autostart">
+					<action name="Execute">
+						<command>exo-open ~/.config/openbox/autostart</command>
+					</action>
+				</item>
+				<separator/>
+				<item label="Reconfigurer">
+					<action name="Reconfigure"/>
+				</item>
+				<item label="Redémarrer">
+					<action name="Restart"/>
+				</item>
+			</menu>
+			<separator/>
+			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Choix du Style"/>
+			<menu id="FontPipeMenu" execute="&pipes;/ac-change-fonts" label="Choix des Fontes"/>
+			<menu id="PolybarPipeMenu" execute="&pipes;/ac-change-polybar" label="Choix du Theme de Polybar"/>
+			<menu id="SchemePipeMenu" execute="&pipes;/ac-change-scheme" label="Choix des Couleurs du Terminal"/>
+			<separator/>
+			<item label="Changer de Wallpaper">
+				<action name="Execute">
+					<command>nitrogen</command>
+				</action>
+			</item>
+			<item label="Réglages Apparence Xfce">
+				<action name="Execute">
+					<command>xfce4-appearance-settings</command>
+				</action>
+			</item>
+			<separator/>
+			<item label="Réglages Energie">
+				<action name="Execute">
+					<command>xfce4-power-manager-settings</command>
+				</action>
+			</item>
+			<item label="Réglages Audio">
+				<action name="Execute">
+					<command>pavucontrol</command>
+				</action>
+			</item>
+			<item label="Réglages Xfce">
+				<action name="Execute">
+					<command>xfce4-settings-manager</command>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu id="Exit" label="Système">
+				<item label="Verrouiller Ecran">
+					<action name="Execute">
+						<command>betterlockscreen --lock</command>
+					</action>
+				</item>
+				<item label="Déconnexion">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --logout</command>
+					</action>
+				</item>
+				<item label="Veille">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --suspent</command>
+					</action>
+				</item>
+				<item label="Rebooter">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --reboot</command>
+					</action>
+				</item>
+				<item label="Eteindre">
+					<action name="Execute">
+						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --shutdown</command>
+					</action>
+				</item>
+		</menu>
+	</menu>
+</openbox_menu>
+<!-- vim:sw=2
+-->

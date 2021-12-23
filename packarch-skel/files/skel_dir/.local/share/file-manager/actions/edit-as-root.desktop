@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+Tooltip=Edit As Root
+Name=Edit As Root
+Profiles=profile-zero;
+Icon=document-edit-sign
+
+[X-Action-Profile profile-zero]
+MimeTypes=all/allfiles;
+Exec=/bin/sh -c "$HOME/.config/openbox/rofi/bin/apps_as_root 'geany %f'"
+Name=Default profile
+SelectionCount==1
