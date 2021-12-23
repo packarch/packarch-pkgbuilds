@@ -19,10 +19,8 @@ prepare() {
 
 package() {
 	local _skeldir=${pkgdir}/etc/skel
-	local _cachedir=${_skeldir}/.cache
 	local _sharedir=${pkgdir}/usr/share/packarch/openbox
 	local _obdir=${pkgdir}/etc/skel/.config/openbox
-	local _configdir=${pkgdir}/etc/skel/.config
 
 	mkdir -p "$_skeldir" && mkdir -p "$_sharedir"
 	
