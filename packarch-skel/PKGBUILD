@@ -43,5 +43,6 @@ package() {
 	find "$_sharedir" -name "*.sh" -print -exec chmod u+x {} +
 	chmod 755 "$_obdir"/autostart
 	chmod 755 -R "$_sharedir"/pipemenus
+	chmod 755 -R "$_obdir"/rofi/bin
 	
 }
