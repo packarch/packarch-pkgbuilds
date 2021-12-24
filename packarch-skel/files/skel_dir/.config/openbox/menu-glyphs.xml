@@ -78,6 +78,7 @@
 			<menu id="PacmanPipeMenu" execute="&pipes;/ac-pacman" label="Gestion Packages"/>
 			<menu id="FilesPipeMenu" execute="&pipes;/ac-files" label="Fichiers &amp; Dossiers"/>
 			<menu id="SysdPipeMenu" execute="&pipes;/ac-systemd" label="Systemd &amp; Services"/>
+			<menu id="DiversPipeMenu" execute="&pipes;/ac-divers" label="Divers"/>
 		</menu>
 		<menu id="ac-shots" execute="&pipes;/ac-shots" label=" Screenshot"/>
 		<menu id="ac-record" execute="&pipes;/ac-record" label=" Enregistreur Ecran"/>
