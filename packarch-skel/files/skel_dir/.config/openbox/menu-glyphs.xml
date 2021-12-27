@@ -19,7 +19,7 @@
 		</item>
 		<item label=" Navigateur Internet">
 			<action name="Execute">
-				<command>firefox</command>
+				<command>vivaldi-stable</command>
 			</action>
 		</item>
 		<item label=" Editeur de Texte">
@@ -78,7 +78,6 @@
 			<menu id="PacmanPipeMenu" execute="&pipes;/ac-pacman" label="Gestion Packages"/>
 			<menu id="FilesPipeMenu" execute="&pipes;/ac-files" label="Fichiers &amp; Dossiers"/>
 			<menu id="SysdPipeMenu" execute="&pipes;/ac-systemd" label="Systemd &amp; Services"/>
-			<menu id="DiversPipeMenu" execute="&pipes;/ac-divers" label="Divers"/>
 		</menu>
 		<menu id="ac-shots" execute="&pipes;/ac-shots" label=" Screenshot"/>
 		<menu id="ac-record" execute="&pipes;/ac-record" label=" Enregistreur Ecran"/>

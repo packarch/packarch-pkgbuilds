@@ -19,7 +19,7 @@
 		</item>
 		<item label="Navigateur Internet">
 			<action name="Execute">
-				<command>firefox</command>
+				<command>vivaldi-stable</command>
 			</action>
 		</item>
 		<item label="Editeur de Texte">

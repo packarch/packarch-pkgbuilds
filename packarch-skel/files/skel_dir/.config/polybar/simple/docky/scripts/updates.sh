@@ -2,7 +2,7 @@
 
 NOTIFY_ICON=/usr/share/packarch/icons/dunst/updates.png
 
-get_total_updates() { UPDATES=$(checkupdates 2>/dev/null | wc -l); }
+get_total_updates() { UPDATES=$(checkupdates.sh 2>/dev/null | wc -l); }
 
 while true; do
     get_total_updates
