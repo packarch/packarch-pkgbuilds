@@ -489,7 +489,7 @@
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>vivaldi-stable</command>
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-e">
