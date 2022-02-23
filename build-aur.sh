@@ -14,6 +14,8 @@ DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
 LIST=(polybar-git
+	  mkinitcpio-openswap
+	  ckbcomp
 	  isoimagewriter
 	  cava
 	  ksuperkey
