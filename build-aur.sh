@@ -18,6 +18,8 @@ LIST=(polybar-git
 	  ksuperkey
 	  snapd
 	  snapd-glib
+	  perl-linux-desktopfiles
+	  obmenu-generator
 	  blight
 	  colorpicker
 	  toilet
