@@ -14,17 +14,26 @@ DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
 LIST=(polybar-git
+	  isoimagewriter
 	  cava
 	  ksuperkey
 	  snapd
 	  snapd-glib
+	  betterlockscreen
+	  downgrade
+	  i3lock-color
+	  light-git
+	  networkmanager-dmenu-git
 	  perl-linux-desktopfiles
+	  picom-ibhagwan-git
+	  timeshift
 	  obmenu-generator
 	  blight
 	  colorpicker
 	  toilet
 	  tty-clock-git
 	  unimatrix-git
+	  yay
 	  xfce-polkit)
 
 # Sort packages
