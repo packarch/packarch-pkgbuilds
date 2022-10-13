@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+Name=Set as wallpaper
+Icon=view-preview
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+MimeTypes=image/*;
+Exec=nitrogen --save --set-zoom-fill %f
+Name=Default profile
+SelectionCount==1

@@ -1,0 +1,22 @@
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+
+pkgname=packarch-artworks
+pkgver=1.0
+pkgrel=1
+pkgdesc="Artworks for Packarch"
+url="https://github.com/packarch/packarch-pkgbuild"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find * -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/packarch/artworks/{}" \;)
+}

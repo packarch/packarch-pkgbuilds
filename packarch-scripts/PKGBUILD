@@ -1,0 +1,23 @@
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+
+pkgname=packarch-scripts
+pkgver=1.0
+pkgrel=3
+pkgdesc="Scripts for Packarch"
+url="https://github.com/packarch/packarch-pkgbuild"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=('light' 'xorg-xbacklight')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find scripts -type f -exec install -Dm 755 "{}" "$pkgdir/usr/share/packarch/{}" \;)
+	(find bin -type f -exec install -Dm 755 "{}" "$pkgdir/usr/local/{}" \;)
+}

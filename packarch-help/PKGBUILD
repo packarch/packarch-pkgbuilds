@@ -1,0 +1,24 @@
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+
+pkgname=packarch-help
+pkgver=1.0
+pkgrel=1
+pkgdesc="Aide et Astuces pour Packarch"
+url="https://github.com/packarch/packarch-pkgbuild"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=('yad')
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find help -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/packarch/{}" \;)
+	install -Dm 755 help-and-tips 			${pkgdir}/usr/local/bin/help-and-tips
+	install -Dm 644 help-and-tips.desktop	${pkgdir}/usr/share/applications/help-and-tips.desktop
+}

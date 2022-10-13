@@ -1,0 +1,22 @@
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+
+pkgname=packarch-fonts
+pkgver=1.0
+pkgrel=2
+pkgdesc="Fonts for Packarch"
+url="https://github.com/packarch/packarch-pkgbuild"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find * -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/fonts/packarch/{}" \;)
+}

@@ -1,0 +1,48 @@
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+
+pkgname=packarch-skel
+pkgver=1.0
+pkgrel=2
+pkgdesc="Openbox WM Configurations for Packarch"
+url="https://github.com/packarch/packarch-pkgbuild"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -afR ../files/. ${srcdir}
+}
+
+package() {
+	local _skeldir=${pkgdir}/etc/skel
+	local _sharedir=${pkgdir}/usr/share/packarch/openbox
+	local _obdir=${pkgdir}/etc/skel/.config/openbox
+
+	mkdir -p "$_skeldir" && mkdir -p "$_sharedir"
+	
+	# Copy skel files
+	cp -rT ${srcdir}/skel_dir 		"$_skeldir"
+	
+	# Copy shared files files
+	cp -rT ${srcdir}/shared_dir 	"$_sharedir"
+	
+	# Fix folders permissions
+	find "$_skeldir" -type d -exec chmod 755 {} \;
+	find "$_sharedir" -type d -exec chmod 755 {} \;
+	
+	# Fix files permissions
+	find "$_skeldir" -type f -exec chmod 644 {} \;
+	find "$_sharedir" -type f -exec chmod 644 {} \;	
+	
+	# Make scripts executable	
+	find "$_skeldir" -name "*.sh" -print -exec chmod u+x {} +
+	find "$_sharedir" -name "*.sh" -print -exec chmod u+x {} +
+	chmod 755 "$_obdir"/autostart
+	chmod 755 -R "$_sharedir"/pipemenus
+	chmod 755 -R "$_obdir"/rofi/bin
+	
+}

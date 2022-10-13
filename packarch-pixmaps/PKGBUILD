@@ -1,0 +1,23 @@
+# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+
+pkgname=packarch-pixmaps
+pkgver=1.0
+pkgrel=1
+pkgdesc="Icons & logo for Packarch"
+url="https://github.com/packarch/packarch-pkgbuild"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+prepare() {
+	cp -af ../files/. ${srcdir}
+}
+
+package() {
+	(find pixmaps -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/{}" \;)
+	(find dunst -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/packarch/icons/{}" \;)
+}

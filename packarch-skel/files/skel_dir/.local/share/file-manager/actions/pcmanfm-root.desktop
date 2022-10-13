@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+Tooltip=Open Folder As Root
+Name=Open Folder As Root
+Profiles=profile-zero;
+Icon=go-parent-folder
+
+[X-Action-Profile profile-zero]
+MimeTypes=inode/directory;
+Exec=/bin/sh -c "$HOME/.config/openbox/rofi/bin/apps_as_root 'dbus-run-session pcmanfm'"
+Name=Default profile

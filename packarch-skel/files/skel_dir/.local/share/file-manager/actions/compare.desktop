@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+Tooltip=Compare files
+Name=Compare files
+Profiles=profile-one;
+Icon=kr_comparedirs
+
+[X-Action-Profile profile-one]
+MimeTypes=all/all;
+Exec=meld %F
+Name=Default profile
