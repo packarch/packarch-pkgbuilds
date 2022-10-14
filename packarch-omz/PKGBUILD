@@ -1,8 +1,8 @@
-# Maintainer: Fabrice Corraire <antidote1911@gmail.com>
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
 
 pkgname=packarch-omz
 pkgver=1.0
-pkgrel=1
+pkgrel=5
 pkgdesc="A community-driven framework for managing your zsh configuration."
 arch=('any')
 url='https://github.com/ohmyzsh/ohmyzsh'
@@ -32,8 +32,8 @@ prepare() {
 
 	# Create config file 
 	cp "templates/zshrc.zsh-template" ".zshrc"
-	sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="spaceship"/g' ".zshrc"
-	sed -i -e 's/# DISABLE_AUTO_UPDATE=.*/DISABLE_AUTO_UPDATE="true"/g' ".zshrc"
+	sed -i -e 's/ZSH_THEME=.*/ZSH_THEME="packarch"/g' ".zshrc"
+	sed -i -e "s/# zstyle ':omz:update' mode disabled/zstyle ':omz:update' mode disabled/g" ".zshrc"
 
 	# Append some aliases
 	cat >> ".zshrc" <<- _EOF_
@@ -42,8 +42,6 @@ prepare() {
 		zshcache_time="\$(date +%s%N)"
 
 		autoload -Uz add-zsh-hook
-		
-		setxkbmap fr
 
 		rehash_precmd() {
 		  if [[ -a /var/cache/zsh/pacman ]]; then

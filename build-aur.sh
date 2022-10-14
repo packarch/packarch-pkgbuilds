@@ -24,7 +24,6 @@ LIST=(mkinitcpio-openswap
 	  networkmanager-dmenu-git
 	  perl-linux-desktopfiles
 	  picom-ibhagwan-git
-	  timeshift
 	  obmenu-generator
 	  blight
 	  colorpicker

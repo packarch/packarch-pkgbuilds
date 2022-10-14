@@ -53,17 +53,6 @@
 				</action>
 			</item>
 			<separator/>
-			<item label="Gestionaire de fichiers CLI (ranger)">
-				<action name="Execute">
-					<execute>~/.config/openbox/rofi/bin/apps_as_root 'alacritty -e ranger'</execute>
-				</action>
-			</item>
-			<item label="Editeur de Texte CLI (vim)">
-				<action name="Execute">
-					<execute>~/.config/openbox/rofi/bin/apps_as_root 'alacritty -e vim'</execute>
-				</action>
-			</item>
-			<separator/>
 			<item label="Lxappearance">
 				<action name="Execute">
 					<execute>~/.config/openbox/rofi/bin/apps_as_root 'lxappearance'</execute>
