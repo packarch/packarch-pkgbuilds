@@ -18,7 +18,7 @@ prepare() {
 }
 
 package() {
-	local _musicdir=${pkgdir}/etc/skel/Music
+	local _musicdir=${pkgdir}/etc/skel/Musique
 	mkdir -p "$_musicdir"
 	cp -r ${srcdir}/* "$_musicdir"
 }

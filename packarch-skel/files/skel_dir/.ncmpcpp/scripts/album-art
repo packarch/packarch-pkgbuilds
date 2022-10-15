@@ -6,7 +6,7 @@
 ## Cover art script for ncmpcpp
 
 # SETTINGS
-music_library="$HOME/Music"
+music_library="$HOME/Musique"
 padding_top=3
 padding_bottom=0
 padding_right=0
