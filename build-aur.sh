@@ -29,7 +29,6 @@ LIST=(mkinitcpio-openswap
 	  colorpicker
 	  toilet
 	  tty-clock-git
-	  unimatrix-git
 	  yay
 	  xfce-polkit)
 
