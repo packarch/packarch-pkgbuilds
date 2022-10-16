@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> -->
+<!-- Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com> -->
 <!-- Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 -->
 <!-- ################################ General Settings ################################ -->
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -22,8 +22,8 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>Juno-mirage</name>
-    <titleLayout>LDSIMC</titleLayout>
+    <name>Arc-Dark</name>
+    <titleLayout>DLIMC</titleLayout>
     <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
@@ -85,8 +85,8 @@
     </popupFixedPosition>
   </resize>
   <margins>
-    <top>10</top>
-    <bottom>0</bottom>
+    <top>0</top>
+    <bottom>10</bottom>
     <left>10</left>
     <right>10</right>
   </margins>
@@ -413,6 +413,11 @@
         <command>volume --toggle</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioMicMute">
+      <action name="Execute">
+        <command>volume --toggle-mic</command>
+      </action>
+    </keybind>
     <keybind key="XF86AudioStop">
       <action name="Execute">
         <command>mpc stop</command>
@@ -484,7 +489,7 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>pcmanfm</command>
+        <command>thunar</command>
       </action>
     </keybind>
     <keybind key="W-w">
@@ -523,11 +528,6 @@
         <command>~/.config/openbox/rofi/bin/screenshot</command>
       </action>
     </keybind>
-    <keybind key="W-i">
-      <action name="Execute">
-        <command>~/.config/openbox/rofi/bin/network</command>
-      </action>
-    </keybind>
     <keybind key="W-r">
       <action name="Execute">
         <command>~/.config/openbox/rofi/bin/runner</command>
@@ -536,12 +536,6 @@
     <keybind key="W-p">
       <action name="Execute">
         <command>color-gpick</command>
-        <!--<command>color-picker</command>-->
-      </action>
-    </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <command>tasks</command>
       </action>
     </keybind>
     <!-- CLI Apps -->
@@ -555,11 +549,6 @@
         <command>alacritty -e vim</command>
       </action>
     </keybind>
-    <keybind key="C-A-n">
-      <action name="Execute">
-        <command>alacritty -e nvim</command>
-      </action>
-    </keybind>
     <keybind key="C-A-r">
       <action name="Execute">
         <command>alacritty -e ranger</command>
@@ -568,11 +557,6 @@
     <keybind key="C-A-h">
       <action name="Execute">
         <command>alacritty -e htop</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-b">
-      <action name="Execute">
-        <command>alacritty -e bashtop</command>
       </action>
     </keybind>
     <!-- Lockscreen -->
