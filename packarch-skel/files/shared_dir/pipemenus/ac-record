@@ -21,16 +21,16 @@ fi
 notify_user () {
 	notify_cmd="dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/video.png"
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd} "Saved in $dir"
+		${notify_cmd} "Vidéo enregistrée dans $dir"
 	else
-		${notify_cmd} "Video Deleted."
+		${notify_cmd} "Video Supprimée."
 	fi
 }
 
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Starting in : $sec"
+		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Début dans : $sec"
 		sleep 1
 	done
 }
@@ -76,13 +76,13 @@ elif [[ "$1" == "--area-na" ]]; then
 else
     menuStart
 		if [[ `pidof ffmpeg` ]]; then
-			menuItem 'Stop Screen Recorder' "pkill ffmpeg"
+			menuItem 'Stopper Enregistrement' "pkill ffmpeg"
 			menuSeparator
 		fi
-        menuItem 'Record Desktop (With Audio)' "$0 --screen"
-        menuItem 'Record Desktop (No Audio)' "$0 --screen-na"
-        menuItem 'Record Area (With Audio)' "$0 --area"
-        menuItem 'Record Area (No Audio)' "$0 --area-na"
+        menuItem 'Filmer le bureau (Avec Audio)' "$0 --screen"
+        menuItem 'Filmer le bureau (Sans Audio)' "$0 --screen-na"
+        menuItem 'Filmer une zone (Avec Audio)' "$0 --area"
+        menuItem 'Filmer une zone (Sans Audio)' "$0 --area-na"
     menuEnd
 fi
 

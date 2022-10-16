@@ -1,0 +1,25 @@
+# Maintainer: Aditya Shakya <adi1090x@gmail.com>
+
+pkgname=packarch-neofetch
+pkgver=1.0
+pkgrel=1
+pkgdesc="Neofetch for Packarch"
+url="https://github.com/packarch/packarch-pkgbuilds"
+arch=('any')
+license=('GPL3')
+makedepends=()
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+source=('neofetch'
+		'config.conf')
+
+sha256sums=('f7e70e6f7ea0f6326f8c8705e98db82bb09e4615f1c5defe5cb365ad56646895'
+            'c0c3f3e504ba1c997d28e31fd6c14b83a3a3441a8265f73c01384316516b8a3f')
+
+package() {
+	install -Dm 755 neofetch   		${pkgdir}/usr/local/bin/neofetch
+	install -Dm 644 config.conf	    ${pkgdir}/etc/skel/.config/neofetch/config.conf
+}

@@ -17,11 +17,11 @@ menuStart
 	menuItem 'Visualiseur Audio' "alacritty -e cava"
 	menuItem 'Infos Neofetch' "alacritty -e $SHELL -c neofetch;$SHELL"
 	menuItem 'Pipes Animation' "alacritty -e pipes"
-	menuItem 'Matrix Vert' "alacritty -e unimatrix -n -s 96 -l o"
-	menuItem 'Matrix Jaune' "alacritty -e unimatrix -n -c yellow -s 90 -l o"
-	menuItem 'Matrix Bleu' "alacritty -e unimatrix -n -c blue -s 90 -l o"
-	menuItem 'Matrix Rouge' "alacritty -e unimatrix -n -c red -s 90 -l o"
-	menuItem 'Matrix Packarch' "alacritty -e unimatrix -c yellow -u 'Packarch'"
+	menuItem 'Matrix Vert' "alacritty -e rmatrix -C green"
+	menuItem 'Matrix Jaune' "alacritty -e rmatrix -C yellow"
+	menuItem 'Matrix Bleu' "alacritty -e rmatrix -C cyan"
+	menuItem 'Matrix Rouge' "alacritty -e rmatrix -C red"
+	menuItem 'Matrix Packarch' "alacritty -e rmatrix -r"
 	
 menuEnd
 

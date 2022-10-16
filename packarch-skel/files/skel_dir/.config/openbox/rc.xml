@@ -22,8 +22,8 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>Arc-Dark</name>
-    <titleLayout>DLIMC</titleLayout>
+    <name>Juno-mirage</name>
+    <titleLayout>LDSIMC</titleLayout>
     <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
@@ -85,8 +85,8 @@
     </popupFixedPosition>
   </resize>
   <margins>
-    <top>0</top>
-    <bottom>10</bottom>
+    <top>10</top>
+    <bottom>0</bottom>
     <left>10</left>
     <right>10</right>
   </margins>

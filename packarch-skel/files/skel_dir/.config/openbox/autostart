@@ -34,6 +34,3 @@ exec mpd &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-## Help-App-Run-Once
-help-and-tips &
-sed -i -e '/## Help-App-Run-Once/Q' "$HOME"/.config/openbox/autostart

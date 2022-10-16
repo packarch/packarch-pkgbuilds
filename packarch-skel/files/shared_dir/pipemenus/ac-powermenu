@@ -7,22 +7,22 @@
 
 ## Rofi #############################################
 DIR="$HOME/.config/openbox/rofi/dialogs"
-MSG="Options  -  yes / y / no / n"
+MSG="Options  -  oui / o / non / n"
 
 cdialog () {
 rofi -dmenu\
     -i\
     -no-fixed-num-lines\
-    -p "Are You Sure? : "\
+    -p "Etes vous sûr ? : "\
     -theme "$DIR"/confirm.rasi
 }
 
 ## Options #############################################
 if  [[ $1 = "--logout" ]]; then
 	ans=$(cdialog)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+	if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
         openbox --exit
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+	elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
         exit
     else
         rofi -theme "$DIR"/askpass.rasi -e "$MSG"
@@ -30,11 +30,11 @@ if  [[ $1 = "--logout" ]]; then
 
 elif  [[ $1 = "--suspent" ]]; then
 	ans=$(cdialog)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+	if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 		mpc -q pause
 		amixer set Master mute
 		betterlockscreen --suspend
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+	elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 		exit
     else
 		rofi -theme "$DIR"/askpass.rasi -e "$MSG"
@@ -42,9 +42,9 @@ elif  [[ $1 = "--suspent" ]]; then
 
 elif  [[ $1 = "--reboot" ]]; then
 	ans=$(cdialog)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+	if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
         systemctl reboot
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+	elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
         exit
     else
         rofi -theme "$DIR"/askpass.rasi -e "$MSG"
@@ -52,9 +52,9 @@ elif  [[ $1 = "--reboot" ]]; then
 
 elif  [[ $1 = "--shutdown" ]]; then
 	ans=$(cdialog)
-	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+	if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
         systemctl poweroff
-	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+	elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
         exit
     else
         rofi -theme "$DIR"/askpass.rasi -e "$MSG"

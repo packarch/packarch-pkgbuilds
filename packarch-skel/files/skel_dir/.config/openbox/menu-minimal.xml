@@ -7,22 +7,22 @@
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
   <menu id="root-menu" title="Menu" label="Openbox 3">
 <!--	<separator label="Main Menu"/>  -->
-		<item label="Terminal Emulator">
+		<item label="Terminal">
 			<action name="Execute">
 				<command>alacritty</command>
 			</action>
 		</item>
-		<item label="File Manager">
+		<item label="Gestionnaire De Fichier">
 			<action name="Execute">
 				<command>pcmanfm</command>
 			</action>
 		</item>
-		<item label="Web Browser">
+		<item label="Navigateur Internet">
 			<action name="Execute">
 				<command>firefox</command>
 			</action>
 		</item>
-		<item label="Text Editor">
+		<item label="Editeur De Texte">
 			<action name="Execute">
 				<command>geany</command>
 			</action>
@@ -31,91 +31,91 @@
 		<menu id="app-menu" execute="obmenu-generator" label="Applications"/>
 		<menu id="preferences" label="Preferences">
 			<menu id="obconfig" label="Openbox">
-				<menu id="ac-ob-menu" execute="&pipes;/ac-ob-menu" label="Menu Style"/>
-				<item label="Settings">
+				<menu id="ac-ob-menu" execute="&pipes;/ac-ob-menu" label="Style Du Menu"/>
+				<item label="Configuration">
 					<action name="Execute">
 						<command>obconf</command>
 					</action>
 				</item>
 				<separator/>
-				<item label="Edit menu.xml">
+				<item label="Editer menu.xml">
 					<action name="Execute">
 						<command>exo-open ~/.config/openbox/menu-minimal.xml</command>
 					</action>
 				</item>
-				<item label="Edit rc.xml">
+				<item label="Editer rc.xml">
 					<action name="Execute">
 						<command>exo-open ~/.config/openbox/rc.xml</command>
 					</action>
 				</item>
-				<item label="Edit autostart">
+				<item label="Editer autostart">
 					<action name="Execute">
 						<command>exo-open ~/.config/openbox/autostart</command>
 					</action>
 				</item>
 				<separator/>
-				<item label="Reconfigure">
+				<item label="Reconfigurer">
 					<action name="Reconfigure"/>
 				</item>
-				<item label="Restart">
+				<item label="Redémarrer">
 					<action name="Restart"/>
 				</item>
 			</menu>
 			<separator/>
-			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Change Style"/>
-			<menu id="FontPipeMenu" execute="&pipes;/ac-change-fonts" label="Change Font"/>
-			<menu id="SchemePipeMenu" execute="&pipes;/ac-change-scheme" label="Terminal Colors"/>
+			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Choix Du Théme"/>
+			<menu id="FontPipeMenu" execute="&pipes;/ac-change-fonts" label="Choix Des Fontes"/>
+			<menu id="SchemePipeMenu" execute="&pipes;/ac-change-scheme" label="Couleurs Du Terminal"/>
 			<separator/>
-			<item label="Change Wallpaper">
+			<item label="Changer Wallpaper">
 				<action name="Execute">
 					<command>nitrogen</command>
 				</action>
 			</item>
-			<item label="Appearance Settings">
+			<item label="Apparence Xfce">
 				<action name="Execute">
 					<command>xfce4-appearance-settings</command>
 				</action>
 			</item>
 			<separator/>
-			<item label="Power Settings">
+			<item label="Réglages Energie">
 				<action name="Execute">
 					<command>xfce4-power-manager-settings</command>
 				</action>
 			</item>
-			<item label="Audio Settings">
+			<item label="Réglages Audio">
 				<action name="Execute">
 					<command>pavucontrol</command>
 				</action>
 			</item>
-			<item label="Settings Manager">
+			<item label="Réglages Xfce">
 				<action name="Execute">
 					<command>xfce4-settings-manager</command>
 				</action>
 			</item>
 		</menu>
 		<separator/>
-		<menu id="Exit" label="System">
-				<item label="Lock">
+		<menu id="Exit" label="Systéme">
+				<item label="Verouiller Ecran">
 					<action name="Execute">
 						<command>betterlockscreen --lock</command>
 					</action>
 				</item>
-				<item label="Logout">
+				<item label="Déconnexion">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --logout</command>
 					</action>
 				</item>
-				<item label="Suspend">
+				<item label="Mise En Veille">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --suspent</command>
 					</action>
 				</item>
-				<item label="Reboot">
+				<item label="Redémarrer">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --reboot</command>
 					</action>
 				</item>
-				<item label="Shutdown">
+				<item label="Eteindre">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --shutdown</command>
 					</action>

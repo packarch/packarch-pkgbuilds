@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Fabrice Corraire <antidote1911@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Openbox Pipemenu to take screenshots with maim
@@ -21,12 +21,12 @@ notify_cmd_shot="dunstify -u low --replace=699 -i /usr/share/packarch/icons/duns
 
 # notify and view screenshot
 notify_view () {
-	${notify_cmd_shot} "Copied to clipboard."
+	${notify_cmd_shot} "Copié dans le presse-papier."
 	viewnior ${dir}/"$file"
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd_shot} "Screenshot Saved."
+		${notify_cmd_shot} "Screenshot Enregistré."
 	else
-		${notify_cmd_shot} "Screenshot Deleted."
+		${notify_cmd_shot} "Screenshot Supprimé."
 	fi
 }
 
@@ -38,7 +38,7 @@ copy_shot () {
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Taking shot in : $sec"
+		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Screenshot sans : $sec"
 		sleep 1
 	done
 }
@@ -87,11 +87,11 @@ elif [[ "$1" == "--area" ]]; then
 	shotarea
 else
     menuStart
-        menuItem 'Screenshot Now' "$0 --now"
-        menuItem 'Screenshot In 5s' "$0 --in5"
-        menuItem 'Screenshot In 10s' "$0 --in10"
-        menuItem 'Screenshot Area' "$0 --area"
-        menuItem 'Screenshot Window' "$0 --win"
+        menuItem 'Screenshot instantané' "$0 --now"
+        menuItem 'Screenshot dans 5s' "$0 --in5"
+        menuItem 'Screenshot dans 10s' "$0 --in10"
+        menuItem 'Screenshot de zone' "$0 --area"
+        menuItem 'Screenshot de fenêtre' "$0 --win"
     menuEnd
 fi
 

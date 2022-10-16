@@ -8,25 +8,25 @@
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
   <menu id="root-menu" title="Menu" label="Openbox 3">
 <!--	<separator label="Main Menu"/>  -->
-		<item icon="&icons;/terminal.png" label="Terminal Emulator">
+		<item icon="&icons;/terminal.png" label="Terminal">
 			<action name="Execute">
 				<command>alacritty</command>
 			</action>
 		</item>
 		<separator/>
-		<item icon="&icons;/filemanager.png" label="File Manager">
+		<item icon="&icons;/filemanager.png" label="Gestionnaire De Fichier">
 			<action name="Execute">
 				<command>pcmanfm</command>
 			</action>
 		</item>
 		<separator/>
-		<item icon="&icons;/browser.png" label="Web Browser">
+		<item icon="&icons;/browser.png" label="Navigateur Internet">
 			<action name="Execute">
 				<command>firefox</command>
 			</action>
 		</item>
 		<separator/>
-		<item icon="&icons;/editor.png" label="Text Editor">
+		<item icon="&icons;/editor.png" label="Editeur De Texte">
 			<action name="Execute">
 				<command>geany</command>
 			</action>
@@ -36,18 +36,18 @@
 		<separator/>
 		<menu icon="&icons;/apps.png" id="app-menu" execute="obmenu-generator" label="Applications"/>
 		<separator/>
-		<menu icon="&icons;/root.png" id="apps-as-root" label="Apps As Root">
+		<menu icon="&icons;/root.png" id="apps-as-root" label="Applications En Root">
 			<item label="Terminal (alacritty)">
 				<action name="Execute">
 					<execute>~/.config/openbox/rofi/bin/apps_as_root alacritty</execute>
 				</action>
 			</item>
-			<item label="File Manager (pcmanfm)">
+			<item label="Gestionnaire De Fichier (pcmanfm)">
 				<action name="Execute">
 					<execute>~/.config/openbox/rofi/bin/apps_as_root 'dbus-run-session pcmanfm'</execute>
 				</action>
 			</item>
-			<item label="Text Editor (geany)">
+			<item label="Editeur De Texte (geany)">
 				<action name="Execute">
 					<execute>~/.config/openbox/rofi/bin/apps_as_root geany</execute>
 				</action>
@@ -76,63 +76,59 @@
 		<separator/>
 		<menu icon="&icons;/shots.png" id="ac-shots" execute="&pipes;/ac-shots" label="Screenshot"/>
 		<separator/>
-		<menu icon="&icons;/record.png" id="ac-record" execute="&pipes;/ac-record" label="Screen Recorder"/>
+		<menu icon="&icons;/record.png" id="ac-record" execute="&pipes;/ac-record" label="Filmer Bureau"/>
 		<separator/>
 		<separator/>
-		<separator/>
-		<menu icon="&icons;/places.png" id="ac-places" execute="&pipes;/ac-places --recent ~/" label="Places"/>
-		<separator/>
-		<menu icon="&icons;/recents.png" id="ac-recent" execute="&pipes;/ac-recent-files" label="Recent Files"/>
 		<separator/>
 		<menu icon="&icons;/settings.png" id="preferences" label="Preferences">
 			<menu id="obconfig" label="Openbox">
-				<menu id="ac-ob-menu" execute="&pipes;/ac-ob-menu" label="Menu Style"/>
-				<item label="Settings">
+				<menu id="ac-ob-menu" execute="&pipes;/ac-ob-menu" label="Style Du Menu"/>
+				<item label="Configuration">
 					<action name="Execute">
 						<command>obconf</command>
 					</action>
 				</item>
 				<separator/>
-				<item label="Edit menu.xml">
+				<item label="Editer menu.xml">
 					<action name="Execute">
 						<command>exo-open ~/.config/openbox/menu-icons.xml</command>
 					</action>
 				</item>
-				<item label="Edit rc.xml">
+				<item label="Editer rc.xml">
 					<action name="Execute">
 						<command>exo-open ~/.config/openbox/rc.xml</command>
 					</action>
 				</item>
-				<item label="Edit autostart">
+				<item label="Editer autostart">
 					<action name="Execute">
 						<command>exo-open ~/.config/openbox/autostart</command>
 					</action>
 				</item>
 				<separator/>
-				<item label="Reconfigure">
+				<item label="Reconfigurer">
 					<action name="Reconfigure"/>
 				</item>
-				<item label="Restart">
+				<item label="Redémarrer">
 					<action name="Restart"/>
 				</item>
 			</menu>
-			<menu id="CompositingPipeMenu" execute="&pipes;/ac-compositor" label="Compositor"/>
+			<menu id="CompositingPipeMenu" execute="&pipes;/ac-compositor" label="Compositeur"/>
 			<separator/>
-			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Change Style"/>
-			<menu id="FontPipeMenu" execute="&pipes;/ac-change-fonts" label="Change Font"/>
-			<menu id="SchemePipeMenu" execute="&pipes;/ac-change-scheme" label="Terminal Color Scheme"/>
+			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Choix Du Théme"/>
+			<menu id="FontPipeMenu" execute="&pipes;/ac-change-fonts" label="Choix Des Fontes"/>
+			<menu id="SchemePipeMenu" execute="&pipes;/ac-change-scheme" label="Couleurs Du Terminal"/>
 			<separator/>
-			<item label="Change Wallpaper">
+			<item label="Changer Wallpaper">
 				<action name="Execute">
 					<command>nitrogen</command>
 				</action>
 			</item>
-			<item label="Appearance Settings">
+			<item label="Apparence Xfce">
 				<action name="Execute">
 					<command>xfce4-appearance-settings</command>
 				</action>
 			</item>
-			<item label="QT5 Settings">
+			<item label="Apparence QT5">
 				<action name="Execute">
 					<command>qt5ct</command>
 				</action>
@@ -143,55 +139,55 @@
 				</action>
 			</item>
 			<separator/>
-			<item label="Power Settings">
+			<item label="Réglages Energie">
 				<action name="Execute">
 					<command>xfce4-power-manager-settings</command>
 				</action>
 			</item>
-			<item label="Audio Settings">
+			<item label="Réglages Audio">
 				<action name="Execute">
 					<command>pavucontrol</command>
 				</action>
 			</item>
-			<item label="Settings Manager">
+			<item label="Réglages Xfce">
 				<action name="Execute">
 					<command>xfce4-settings-manager</command>
 				</action>
 			</item>
 		</menu>
 		<separator/>
-		<menu icon="&icons;/keyboard.png" id="KeybindsPipeMenu" execute="&pipes;/ac-kb-pipemenu" label="Keybinds"/>
+		<menu icon="&icons;/keyboard.png" id="KeybindsPipeMenu" execute="&pipes;/ac-kb-pipemenu" label="Raccourcis Clavier"/>
 		<separator/>
 		<separator/>
 		<separator/>
-		<item icon="&icons;/sys-lock.png" label="Lock Screen">
+		<item icon="&icons;/sys-lock.png" label="Verouiller Ecran">
 			<action name="Execute">
 				<command>betterlockscreen --lock</command>
 			</action>
 		</item>
 		<separator/>
-		<menu icon="&icons;/sys-poweroff.png" id="Exit" label="System">
-				<menu icon="&icons;/stats.png" id="SystemPipeMenu" execute="&pipes;/ac-sysinfo" label="Stats"/>
+		<menu icon="&icons;/sys-poweroff.png" id="Exit" label="Systeme">
+				<menu icon="&icons;/stats.png" id="SystemPipeMenu" execute="&pipes;/ac-sysinfo" label="Infos"/>
 				<separator/>
-				<item icon="&icons;/sys-exit.png" label="Logout">
+				<item icon="&icons;/sys-exit.png" label="Déconnexion">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --logout</command>
 					</action>
 				</item>
 				<separator/>
-				<item icon="&icons;/sys-sleep.png" label="Suspend">
+				<item icon="&icons;/sys-sleep.png" label="Mise En Veille">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --suspent</command>
 					</action>
 				</item>
 				<separator/>
-				<item icon="&icons;/sys-reboot.png" label="Reboot">
+				<item icon="&icons;/sys-reboot.png" label="Redémarrer">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --reboot</command>
 					</action>
 				</item>
 				<separator/>
-				<item icon="&icons;/sys-poweroff-alt.png" label="Shutdown">
+				<item icon="&icons;/sys-poweroff-alt.png" label="Eteindre">
 					<action name="Execute">
 						<command>/usr/share/packarch/openbox/pipemenus/ac-powermenu --shutdown</command>
 					</action>
