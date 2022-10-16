@@ -267,7 +267,7 @@ compositor() {
 # notify ------------------------------------
 notify_user() {
 	local style=`basename $0` 
-	dunstify -u normal --replace=699 -i /usr/share/archcraft/icons/dunst/themes.png "Applying Style : ${style%.*}"
+	dunstify -u normal --replace=699 -i /usr/share/packarch/icons/dunst/themes.png "Applying Style : ${style%.*}"
 }
 
 ## Execute Script ---------------------------
@@ -295,7 +295,7 @@ change_xfce_terminal 'Terminus 9'
 change_geany 'adapta' 'Terminus Medium 9'
 
 # funct THEME ICON CURSOR FONT
-change_appearance 'Adapta-Nokto-Eta' 'Archcraft-Dark' 'Pear' 'Terminus Medium 9'
+change_appearance 'Adapta-Nokto-Eta' 'Packarch-Dark' 'Pear' 'Terminus Medium 9'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
 obconfig 'Adapta-Bitmap' 'CLM' 'Terminus' '9' 'menu-simple.xml' && openbox --reconfigure

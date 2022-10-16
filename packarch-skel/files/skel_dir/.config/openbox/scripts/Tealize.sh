@@ -267,7 +267,7 @@ compositor() {
 # notify ------------------------------------
 notify_user() {
 	local style=`basename $0` 
-	dunstify -u normal --replace=699 -i /usr/share/archcraft/icons/dunst/themes.png "Applying Style : ${style%.*}"
+	dunstify -u normal --replace=699 -i /usr/share/packarch/icons/dunst/themes.png "Applying Style : ${style%.*}"
 }
 
 ## Execute Script ---------------------------
