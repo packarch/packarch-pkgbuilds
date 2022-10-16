@@ -42,7 +42,7 @@
 					<execute>~/.config/openbox/rofi/bin/apps_as_root alacritty</execute>
 				</action>
 			</item>
-			<item label="File Manager (thunar)">
+			<item label="File Manager (pcmanfm)">
 				<action name="Execute">
 					<execute>~/.config/openbox/rofi/bin/apps_as_root 'dbus-run-session pcmanfm'</execute>
 				</action>
@@ -50,12 +50,6 @@
 			<item label="Text Editor (geany)">
 				<action name="Execute">
 					<execute>~/.config/openbox/rofi/bin/apps_as_root geany</execute>
-				</action>
-			</item>
-			<separator/>
-			<item label="File Manager CLI (ranger)">
-				<action name="Execute">
-					<execute>~/.config/openbox/rofi/bin/apps_as_root 'alacritty -e ranger'</execute>
 				</action>
 			</item>
 			<separator/>
