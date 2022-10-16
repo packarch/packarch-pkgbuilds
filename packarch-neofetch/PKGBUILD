@@ -16,7 +16,7 @@ options=(!strip !emptydirs)
 source=('neofetch'
 		'config.conf')
 
-sha256sums=('f7e70e6f7ea0f6326f8c8705e98db82bb09e4615f1c5defe5cb365ad56646895'
+sha256sums=('ea660e88475bdf2b4ca61bac586da8f08664b924a67a00e862b2e2ccc2b93679'
             'c0c3f3e504ba1c997d28e31fd6c14b83a3a3441a8265f73c01384316516b8a3f')
 
 package() {
