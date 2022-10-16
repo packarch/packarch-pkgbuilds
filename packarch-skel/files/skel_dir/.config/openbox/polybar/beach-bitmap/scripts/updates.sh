@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 BAR_ICON=""
-NOTIFY_ICON=/usr/share/packarch/icons/dunst/updates.png
+NOTIFY_ICON=/usr/share/archcraft/icons/dunst/updates.png
 
-get_total_updates() { UPDATES=$(checkupdates.sh 2>/dev/null | wc -l); }
+get_total_updates() { UPDATES=$(checkupdates 2>/dev/null | wc -l); }
 
 while true; do
     get_total_updates

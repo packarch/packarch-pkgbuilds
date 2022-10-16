@@ -1,4 +1,4 @@
-/* Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> */
+/* Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com> */
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
 configuration {
@@ -98,11 +98,11 @@ element normal.normal {
 }
 element normal.urgent {
     background-color: 				@BG;
-    text-color:       				@red;
+    text-color:       				inherit;
 }
 element normal.active {
     background-color: 				@BG;
-    text-color:       				@green;
+    text-color:       				inherit;
 }
 element selected.normal {
     background-color: 				@BG;
@@ -112,7 +112,7 @@ element selected.normal {
 }
 element selected.urgent {
     background-color: 				@BG;
-    text-color:       				@red;
+    text-color:       				inherit;
 }
 element selected.active {
     background-color: 				@BG;

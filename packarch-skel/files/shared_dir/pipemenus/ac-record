@@ -21,16 +21,16 @@ fi
 notify_user () {
 	notify_cmd="dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/video.png"
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd} "Enregistré dans $dir"
+		${notify_cmd} "Saved in $dir"
 	else
-		${notify_cmd} "Video Supprimée."
+		${notify_cmd} "Video Deleted."
 	fi
 }
 
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 -i /usr/share/archcraft/icons/dunst/timer.png "Début Dans : $sec"
+		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Starting in : $sec"
 		sleep 1
 	done
 }

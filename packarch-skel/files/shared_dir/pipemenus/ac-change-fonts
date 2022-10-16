@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Openbox Pipemenu to change fonts for various applications
@@ -21,7 +21,7 @@ fi
 
 # Font
 getfonts () {
-	FONT=$(yad --title='Choisir Fonte' --font --separate-output --button=Annuler:1 --button=Selection:0)
+	FONT=$(yad --title='Select A Font' --font --separate-output --button=Cancel:1 --button=Select:0)
 	FNAME=$(echo $FONT | cut -d'|' -f1)
 	FSTYLE=$(echo $FONT | cut -d'|' -f2)
 	FSIZE=$(echo $FONT | cut -d'|' -f3)
@@ -149,14 +149,14 @@ elif [[ "$1" == "--all" ]]; then
 
 else
     menuStart
-        menuItem 'Barre Systéme (polybar)' "$0 --bar"
+        menuItem 'Status Bar (polybar)' "$0 --bar"
         menuItem 'Launchers (rofi)' "$0 --rofi"
         menuItem 'Terminal (alacritty)' "$0 --terminal"
-        menuItem 'Bureau (openbox)' "$0 --openbox"
+        menuItem 'Desktop (openbox)' "$0 --openbox"
         menuItem 'Notifications (dunst)' "$0 --dunst"
         menuItem 'Applications (gtk)' "$0 --gtk"
         menuSeparator
-        menuItem 'Global' "$0 --all"
+        menuItem 'Change Globally' "$0 --all"
     menuEnd
 fi
 

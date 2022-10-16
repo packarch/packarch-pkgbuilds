@@ -21,12 +21,12 @@ notify_cmd_shot="dunstify -u low --replace=699 -i /usr/share/packarch/icons/duns
 
 # notify and view screenshot
 notify_view () {
-	${notify_cmd_shot} "Copié dans presse-papier."
+	${notify_cmd_shot} "Copied to clipboard."
 	viewnior ${dir}/"$file"
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd_shot} "Screenshot Enregistré."
+		${notify_cmd_shot} "Screenshot Saved."
 	else
-		${notify_cmd_shot} "Screenshot Supprimé."
+		${notify_cmd_shot} "Screenshot Deleted."
 	fi
 }
 
@@ -38,7 +38,7 @@ copy_shot () {
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 -i /usr/share/archcraft/icons/dunst/timer.png "Screenshot dans : $sec"
+		dunstify -t 1000 --replace=699 -i /usr/share/packarch/icons/dunst/timer.png "Taking shot in : $sec"
 		sleep 1
 	done
 }

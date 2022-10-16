@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Openbox Pipemenu For Picom Compositor
@@ -198,57 +198,57 @@ elif [[ $1 = '--update-blur' ]]; then
 else
     menuStart
     if ! [[ $(pidof picom) ]]; then
-        menuItem 'Activer Compositeur' "$0 --start"
+        menuItem 'Enable Compositor' "$0 --start"
     else
-        menuSeparator 'Moteur'
+        menuSeparator 'Backend'
 		if [[ "$check_backend" != "glx" ]]; then
-			menuItem "Utiliser 'glx'" "$0 --use-glx"
+			menuItem "Use 'glx' backend" "$0 --use-glx"
 		else
-			menuItem "Utiliser 'xrender'" "$0 --use-xrender"
+			menuItem "Use 'xrender' backend" "$0 --use-xrender"
 		fi
-        menuSeparator 'Coins Arrondis'
+        menuSeparator 'Corners'
 		if [[ "$check_corners" != "0" ]]; then
-			menuItem 'Réglage Taille Des Angles' "$0 --corner-radius"
-			menuItem 'Désactiver Les Coins Arrondis' "$0 --disable-corners"
+			menuItem 'Change Corner Radius' "$0 --corner-radius"
+			menuItem 'Disable Rounded Corners' "$0 --disable-corners"
 		else
-			menuItem 'Activer Les Coins Arrondis' "$0 --corner-radius"
+			menuItem 'Enable Rounded Corners' "$0 --corner-radius"
 		fi
-        menuSeparator 'Bordures'
+        menuSeparator 'Border'
 		if [[ "$check_border" != "0" ]]; then
-			menuItem 'Réglage Taille Bordures' "$0 --border-size"
-			menuItem 'Désactiver Les Bordures' "$0 --disable-borders"
+			menuItem 'Change Border Size' "$0 --border-size"
+			menuItem 'Disable Borders' "$0 --disable-borders"
 		else
-			menuItem 'Activer Les Bordures' "$0 --border-size"
+			menuItem 'Enable Borders' "$0 --border-size"
 		fi
-        menuSeparator 'Ombres'
+        menuSeparator 'Shadow'
 		if [[ "$check_shadow" == "true" ]]; then
-			menuItem 'Réglage Des Ombres' "$0 --update-shadows"
-			menuItem 'Reset Réglage Des Ombres' "$0 --reset-shadows"
-			menuItem 'Désactiver Les Ombres' "$0 --disable-shadows"
+			menuItem 'Modify Shadow Settings' "$0 --update-shadows"
+			menuItem 'Reset Shadow Settings' "$0 --reset-shadows"
+			menuItem 'Disable Client Shadows' "$0 --disable-shadows"
 		else
-			menuItem 'Activer Les Ombres' "$0 --enable-shadows"
+			menuItem 'Enable Client Shadows' "$0 --enable-shadows"
 		fi
         menuSeparator 'Fading'
 		if [[ "$check_fading" == "true" ]]; then
-			menuItem 'Réglage Du Fading' "$0 --update-fading"
-			menuItem 'Reset Réglage Du Fading' "$0 --reset-fading"
-			menuItem 'Désactiver Le Fading' "$0 --disable-fading"
+			menuItem 'Modify Fading Settings' "$0 --update-fading"
+			menuItem 'Reset Fading Settings' "$0 --reset-fading"
+			menuItem 'Disable Fading' "$0 --disable-fading"
 		else
-			menuItem 'Activer Le Fading' "$0 --enable-fading"
+			menuItem 'Enable Fading' "$0 --enable-fading"
 		fi
-        menuSeparator 'Flou'
+        menuSeparator 'Blur'
 		if [[ "$check_blur" != "dual_kawase" ]]; then
-			menuItem 'Activer Effet De Flou' "$0 --enable-blur"
+			menuItem 'Enable Blur Effect' "$0 --enable-blur"
 		else
-			menuItem 'Définir Force Du Flou' "$0 --update-blur"
-			menuItem 'Désactiver Effet De Flou' "$0 --disable-blur"
+			menuItem 'Set Blur Strength' "$0 --update-blur"
+			menuItem 'Disable Blur Effect' "$0 --disable-blur"
 		fi
-        menuSeparator 'Divers'
-        menuItem 'Redémarrer Compositeur' "$0 --restart"
-        menuItem 'Désactiver Compositeur' "$0 --stop"
+        menuSeparator 'Settings'
+        menuItem 'Restart Compositor' "$0 --restart"
+        menuItem 'Disable Compositor' "$0 --stop"
     fi
 	menuSeparator
-    menuItem 'Editer Le Fichier De Config' "$0 --edit"
+    menuItem 'Edit Configuration File' "$0 --edit"
     menuEnd
 fi
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Openbox Pipemenu to parse .recently-used.xbel and generate openbox pipe menu
@@ -75,7 +75,7 @@ files=$(perl -MURI::Escape -e 'print uri_unescape($ARGV[0]);' "$files")
 output='<openbox_pipe_menu>
 '"$files"'
 <separator/>
-  <item label="Vider Fichiers Récents">
+  <item label="Clear Recent Files">
     <action name="Execute">
       <command>&apos;'"$0"'&apos; --clear</command>
     </action>

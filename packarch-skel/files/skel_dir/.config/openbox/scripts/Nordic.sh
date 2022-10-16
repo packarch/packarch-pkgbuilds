@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Dirs #############################################
@@ -24,11 +24,9 @@ change_polybar() {
 }
 
 # rofi --------------------------------------
-change_rofi() {
+change_rofi() {		
 	sed -i -e "s/STYLE=.*/STYLE=\"$1\"/g" 						${rofi_path}/bin/music ${rofi_path}/bin/network ${rofi_path}/bin/screenshot ${rofi_path}/bin/runner
-	sed -i -e "s/DIR=.*/DIR=\"$1\"/g" 							${rofi_path}/bin/launcher ${rofi_path}/bin/powermenu
-	sed -i -e 's/STYLE=.*/STYLE="launcher"/g' 					${rofi_path}/bin/launcher
-	sed -i -e 's/STYLE=.*/STYLE="powermenu"/g' 					${rofi_path}/bin/powermenu
+	sed -i -e "s/STYLE=.*/STYLE=\"$1\"/g" 						${rofi_path}/bin/launcher ${rofi_path}/bin/powermenu
 	sed -i -e "s/font:.*/font:				 	\"$2\";/g" 		${rofi_path}/"$1"/font.rasi
 
 	sed -i -e "s/font:.*/font:				 	\"$2\";/g" 			${rofi_path}/dialogs/askpass.rasi ${rofi_path}/dialogs/confirm.rasi
@@ -113,10 +111,10 @@ change_appearance() {
 	xfconf-query -c xsettings -p /Net/IconThemeName -s "$2"
 	xfconf-query -c xsettings -p /Gtk/CursorThemeName -s "$3"
 	xfconf-query -c xsettings -p /Gtk/FontName -s "$4"
-
+	
 	if [[ -f "$HOME"/.icons/default/index.theme ]]; then
 		sed -i -e "s/Inherits=.*/Inherits=$3/g" "$HOME"/.icons/default/index.theme
-	fi
+	fi	
 }
 
 # openbox -----------------------------------
@@ -177,9 +175,14 @@ obconfig () {
 
 # dunst -------------------------------------
 change_dunst() {
-	sed -i -e "s/geometry = .*/geometry = \"$1\"/g" 	${dunst_path}/dunstrc
-	sed -i -e "s/font = .*/font = $2/g" 				${dunst_path}/dunstrc
-	sed -i -e "s/frame_width = .*/frame_width = $3/g" 	${dunst_path}/dunstrc
+	sed -i -e "s/width = .*/width = $1/g" 						${dunst_path}/dunstrc
+	sed -i -e "s/height = .*/height = $2/g" 					${dunst_path}/dunstrc
+	sed -i -e "s/offset = .*/offset = $3/g" 					${dunst_path}/dunstrc
+	sed -i -e "s/origin = .*/origin = $4/g" 					${dunst_path}/dunstrc
+	sed -i -e "s/font = .*/font = $5/g" 						${dunst_path}/dunstrc
+	sed -i -e "s/frame_width = .*/frame_width = $6/g" 			${dunst_path}/dunstrc
+	sed -i -e "s/separator_height = .*/separator_height = 4/g" 	${dunst_path}/dunstrc
+	sed -i -e "s/line_height = .*/line_height = 4/g" 			${dunst_path}/dunstrc
 
 	sed -i '/urgency_low/Q' ${dunst_path}/dunstrc
 	cat >> ${dunst_path}/dunstrc <<- _EOF_
@@ -205,6 +208,32 @@ change_dunst() {
 	pkill dunst && dunst &
 }
 
+# Plank -------------------------------------
+change_dock() {
+	cat > "$HOME"/.cache/plank.conf <<- _EOF_
+		[dock1]
+		alignment='center'
+		auto-pinning=true
+		current-workspace-only=false
+		dock-items=['xfce-settings-manager.dockitem', 'Alacritty.dockitem', 'thunar.dockitem', 'firefox.dockitem', 'geany.dockitem']
+		hide-delay=0
+		hide-mode='intelligent'
+		icon-size=32
+		items-alignment='center'
+		lock-items=false
+		monitor=''
+		offset=0
+		pinned-only=false
+		position='bottom'
+		pressure-reveal=false
+		show-dock-item=false
+		theme='Transparent'
+		tooltips-enabled=true
+		unhide-delay=0
+		zoom-enabled=true
+		zoom-percent=120
+	_EOF_
+}
 
 # compositor --------------------------------
 compositor() {
@@ -221,7 +250,7 @@ compositor() {
 
 	# Rounded Corners
 	sed -i -e "s/backend = .*/backend = \"$backend\";/g" 				${comp_file}
-	sed -i -e "s/corner-radius = .*/corner-radius = $cradius;/g" 		${comp_file}
+	sed -i -e "s/corner-radius = .*/corner-radius = $cradius;/g" 		${comp_file}	
 
 	# Shadows
 	sed -i -e "s/shadow-radius = .*/shadow-radius = $shadow_r;/g" 		${comp_file}
@@ -237,8 +266,8 @@ compositor() {
 
 # notify ------------------------------------
 notify_user() {
-	local style=`basename $0`
-	dunstify -u normal --replace=699 -i /usr/share/packarch/icons/dunst/themes.png "Applying Style : ${style%.*}"
+	local style=`basename $0` 
+	dunstify -u normal --replace=699 -i /usr/share/archcraft/icons/dunst/themes.png "Applying Style : ${style%.*}"
 }
 
 ## Execute Script ---------------------------
@@ -272,8 +301,10 @@ change_appearance 'Nordic' 'Nordic-Folders' 'Sweet' 'Noto Sans 9'
 obconfig 'Nordic' 'LIMC' 'JetBrains Mono' '9' 'menu-icons.xml' && openbox --reconfigure
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
-change_dunst '280x50-10+48' 'Iosevka Custom 9' '0'
+change_dunst '280' '80' '10x48' 'top-right' 'Iosevka Custom 9' '0'
 
+# Paste settings in funct (PLANK)
+change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/docks/
 
 # Change compositor settings
 #compositor 'glx' '6' '14 0.30 -12 -12' 'none 0'

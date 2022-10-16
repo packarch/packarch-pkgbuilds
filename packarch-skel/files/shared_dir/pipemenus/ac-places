@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Openbox Pipemenu for places
 
 readonly terminal=alacritty
 readonly text_editor=geany
-readonly open_folder_cmd=pcmanfm
+readonly open_folder_cmd=thunar
 readonly default_open_cmd=exo-open
 readonly recent_script=/usr/share/packarch/openbox/pipemenus/ac-recent-files
 
@@ -64,8 +64,8 @@ case $1 in
         output='<openbox_pipe_menu>'
         if [[ -x $recent_script ]]; then
             output="$output
-  <separator label=\"Récemment ouverts...\"/>
-  <menu execute=\"$recent_script\" id=\"recent\" label=\"fichiers\"/>"
+  <separator label=\"Recently opened...\"/>
+  <menu execute=\"$recent_script\" id=\"recent\" label=\"files\"/>"
         else
             echo "$0 : cannot find executable script $recent_script" >&2
         fi
@@ -90,7 +90,7 @@ esac
 
 output="$output
   <separator label=\"$pathe\"/>
-  <item label=\"Parcourir ici...\">
+  <item label=\"Browse here...\">
     <action name=\"Execute\">
       <command>&apos;$open_folder_cmd&apos; &apos;$pathe_apos&apos;</command>
     </action>

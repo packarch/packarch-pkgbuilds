@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Openbox Pipemenu to change openbox menu style
@@ -27,7 +27,7 @@ fi
 
 menuStart
 menuItem 'Simple' "$0 menu-simple.xml"
-menuItem 'Icones' "$0 menu-icons.xml"
-menuItem 'Glyphes' "$0 menu-glyphs.xml"
+menuItem 'Iconic' "$0 menu-icons.xml"
+menuItem 'Glyphs' "$0 menu-glyphs.xml"
 menuItem 'Minimal' "$0 menu-minimal.xml"
 menuEnd
