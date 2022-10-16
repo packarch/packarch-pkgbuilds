@@ -62,6 +62,8 @@
 				</action>
 			</item>
 		</menu>
+		<menu id="ac-divers" execute="&pipes;/ac-divers" label="Divers"/>
+		<menu id="ac-shots" execute="&pipes;/ac-shots" label="Screenshot"/>
 		<menu id="ac-shots" execute="&pipes;/ac-shots" label="Screenshot"/>
 		<menu id="ac-record" execute="&pipes;/ac-record" label="Screen Recorder"/>
 		<separator/>
