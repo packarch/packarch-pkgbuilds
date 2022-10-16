@@ -18,6 +18,5 @@ prepare() {
 }
 
 package() {
-	(find pixmaps -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/{}" \;)
 	(find dunst -type f -exec install -Dm 644 "{}" "$pkgdir/usr/share/packarch/icons/{}" \;)
 }
