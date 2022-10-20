@@ -14,6 +14,7 @@ DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
 LIST=(mkinitcpio-openswap
+	  autofs
 	  ckbcomp
 	  cava
 	  ksuperkey
