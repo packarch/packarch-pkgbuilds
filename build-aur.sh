@@ -14,7 +14,8 @@ DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
 LIST=(mkinitcpio-openswap
-	  flat-remix
+	  numix-icon-theme-git
+	  numix-folders-git
 	  autofs
 	  ckbcomp
 	  cava
