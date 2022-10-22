@@ -295,7 +295,7 @@ change_xfce_terminal 'JetBrainsMono Nerd Font 10'
 change_geany 'bouquet' 'JetBrains Mono 10'
 
 # funct THEME ICON CURSOR FONT
-change_appearance 'Juno-mirage' 'Luna-Dark' 'Future-dark' 'Noto Sans 9'
+change_appearance 'Juno-mirage' 'Flat-Remix-Yellow-Dark' 'Future-dark' 'Noto Sans 9'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
 obconfig 'Juno-mirage' 'LDSIMC' 'JetBrains Mono' '9' 'menu-icons.xml' && openbox --reconfigure
