@@ -295,7 +295,7 @@ change_xfce_terminal 'JetBrainsMono Nerd Font 10'
 change_geany 'satanic' 'JetBrains Mono 10'
 
 # funct THEME ICON CURSOR FONT
-change_appearance 'Kripton' 'Luna-Dark' 'LyraS' 'Noto Sans 9' && openbox --restart
+change_appearance 'Kripton' 'Numix' 'LyraS' 'Noto Sans 9' && openbox --restart && sudo numix-folders -p
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
 obconfig 'Kripton' 'LIMC' 'JetBrains Mono' '9' 'menu-icons.xml' && openbox --reconfigure
