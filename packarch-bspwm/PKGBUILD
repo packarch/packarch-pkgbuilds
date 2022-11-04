@@ -51,6 +51,7 @@ package() {
 	install -Dm 755 bspwmrc   			"$_bspwmdir"/bspwmrc
 	install -Dm 644 dunstrc   			"$_bspwmdir"/dunstrc
 	install -Dm 644 picom.conf   		"$_bspwmdir"/picom.conf
+	install -Dm 644 keybindings   		"$_bspwmdir"/keybindings
 	install -Dm 644 sxhkdrc				"$_bspwmdir"/sxhkdrc
 	install -Dm 644 xsettingsd			"$_bspwmdir"/xsettingsd
 }
