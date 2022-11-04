@@ -298,7 +298,7 @@ change_geany 'arc' 'JetBrains Mono 12'
 change_appearance 'Arc-Easy' 'Arc-Circle' 'Qogirr' 'Cantarell 12'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'Arc-Easy' 'NLIMC' 'JetBrains Mono' '12' 'menu-minimal.xml' && openbox --reconfigure
+obconfig 'Arc-Easy' 'NLIMC' 'JetBrains Mono' '12' 'menu-minimal.xml'
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '300' '100' '20x20' 'top-right' 'JetBrains Mono 12' '2'
@@ -308,3 +308,6 @@ change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/d
 
 # Change compositor settings
 compositor 'glx' '0' '14 0.30 -12 -12' 'none 0'
+
+# Restart Openbox
+openbox --reconfigure && openbox --restart

@@ -298,7 +298,7 @@ change_geany 'tealize' 'JetBrains Mono 10'
 change_appearance 'Juno-palenight' 'Luv-Folders-Dark' 'Vimix' 'Noto Sans 9'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'Juno-palenight' 'LIMC' 'JetBrains Mono' '9' 'menu-icons.xml' && openbox --reconfigure
+obconfig 'Juno-palenight' 'LIMC' 'JetBrains Mono' '9' 'menu-icons.xml'
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '280' '80' '10x46' 'top-right' 'JetBrains Mono 10' '0'
@@ -308,3 +308,6 @@ change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/d
 
 # Change compositor settings
 compositor 'glx' '6' '14 0.30 -12 -12' 'none 0'
+
+# Restart Openbox
+openbox --reconfigure && openbox --restart

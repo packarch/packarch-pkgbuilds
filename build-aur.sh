@@ -14,8 +14,12 @@ DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
 LIST=(mkinitcpio-openswap
-	  numix-icon-theme-git
-	  numix-folders-git
+	  azote
+	  eww-git
+	  catppuccin-gtk-theme-frappe
+	  catppuccin-gtk-theme-macchiato
+	  catppuccin-gtk-theme-mocha
+	  papirus-folders-catppuccin-git
 	  autofs
 	  ckbcomp
 	  cava

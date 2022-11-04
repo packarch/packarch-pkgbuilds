@@ -298,7 +298,7 @@ change_geany 'nordic' 'Iosevka Custom 10'
 change_appearance 'Nordic' 'Nordic-Folders' 'Sweet' 'Noto Sans 9'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'Nordic' 'LIMC' 'JetBrains Mono' '9' 'menu-icons.xml' && openbox --reconfigure
+obconfig 'Nordic' 'LIMC' 'JetBrains Mono' '9' 'menu-icons.xml'
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '280' '80' '10x48' 'top-right' 'Iosevka Custom 9' '0'
@@ -308,3 +308,6 @@ change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/d
 
 # Change compositor settings
 compositor 'glx' '6' '14 0.30 -12 -12' 'none 0'
+
+# Restart Openbox
+openbox --reconfigure && openbox --restart

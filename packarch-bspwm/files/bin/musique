@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+CONFIG="$HOME/.config/bspwm/alacritty/alacritty.yml"
+
+alacritty --config-file "$CONFIG" -e ncmpcpp

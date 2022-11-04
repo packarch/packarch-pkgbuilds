@@ -166,15 +166,15 @@ fuzzy-match = true
 
 ; ws-icon-[0-9]+ = label;icon
 ; Note that the label needs to correspond with the bspwm workspace name
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
-ws-icon-7 = VIII;
-ws-icon-default = 
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-default = 
 
 format = <label-state>
 format-font = 2
@@ -247,8 +247,8 @@ type = internal/date
 
 interval = 1.0
 
-time = %A %d %B %Y, %H:%M %p
-time-alt = %H:%M %p
+time = %H:%M %p
+time-alt = %A %d %B %Y | %H:%M %p
 
 format = <label>
 format-prefix = " "
@@ -365,6 +365,144 @@ content = ◆
 content-background = ${color.BACKGROUND}
 content-foreground = ${color.BLACK}
 content-padding = 2
+
+[module/firefox]
+type = custom/text
+
+content =
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+
+click-left = firefox &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/pcmanfm]
+type = custom/text
+
+content =
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+
+click-left = pcmanfm &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/jellyfin]
+type = custom/text
+
+content =磊
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+
+click-left = jellyfinmediaplayer &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/terminal]
+type = custom/text
+
+content =
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+
+click-left = bspterm &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/pcmanfmroot]
+type = custom/text
+
+content =
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.RED}
+content-padding = 1
+
+click-left = ~/.config/openbox/rofi/bin/apps_as_root 'dbus-run-session pcmanfm' &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/neofetch]
+type = custom/text
+
+content =
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+
+click-left = alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e $SHELL -c "neofetch && exec $SHELL"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/wallpaper]
+type = custom/text
+
+content =
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+
+click-left = azote &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/theme]
+type = custom/text
+
+content =
+content-font = 2
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+
+click-left = ~/.config/bspwm/rofi/bin/themes &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/sysmenu]
+type = custom/text
+
+content = 
+content-font = 2
+content-background = ${color.BG}
+content-foreground = ${color.RED}
+content-padding = 0
+
+click-left = ~/.config/bspwm/rofi/bin/powermenu &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/keyhint]
+type = custom/text
+content = 
+click-left = alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e less ~/.config/bspwm/keybindings &
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+margin-right = 0
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/music]
+type = custom/text
+content = 
+click-left = alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e ncmpcpp
+content-background = ${color.BG1}
+content-foreground = ${color.BLUE}
+content-padding = 1
+margin-right = 0
+
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;	    __________  ______

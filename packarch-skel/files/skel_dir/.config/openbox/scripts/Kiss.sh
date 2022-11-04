@@ -292,13 +292,13 @@ change_terminal 'JetBrainsMono Nerd Font' '10'
 change_xfce_terminal 'JetBrainsMono Nerd Font 10'
 
 # funct SCHEME FONT
-change_geany 'metallic-bottle' 'JetBrains Mono 10'
+change_geany 'kiss' 'JetBrains Mono 10'
 
 # funct THEME ICON CURSOR FONT
 change_appearance 'White' 'Zafiro-Dark' 'Qogirr' 'Iosevka 10'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'White' 'LC' 'JetBrains Mono' '10' 'menu-minimal.xml' && openbox --reconfigure
+obconfig 'White' 'LC' 'JetBrains Mono' '10' 'menu-minimal.xml'
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '280' '80' '10x50' 'top-right' 'JetBrains Mono 10' '0'
@@ -308,3 +308,6 @@ change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/d
 
 # Change compositor settings
 compositor 'glx' '0' '0 0 0 0' 'none 0'
+
+# Restart Openbox
+openbox --reconfigure && openbox --restart

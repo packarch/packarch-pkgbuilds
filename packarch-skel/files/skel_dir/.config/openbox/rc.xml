@@ -22,8 +22,8 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>Juno-mirage</name>
-    <titleLayout>LDSIMC</titleLayout>
+    <name>Wave</name>
+    <titleLayout>LIMC</titleLayout>
     <keepBorder>no</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">

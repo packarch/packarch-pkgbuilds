@@ -10591,7 +10591,6 @@ main() {
         display_image
         sleep 1
     done
-    $SHELL
     return 0
 }
 

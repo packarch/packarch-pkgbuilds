@@ -274,7 +274,7 @@ notify_user() {
 notify_user
 
 # funct WALLPAPER
-set_wallpaper 'adaptive.png'
+set_wallpaper 'adaptive.jpg'
 
 # funct STYLE FONT
 change_polybar 'adaptive' 'Iosevka Nerd Font:size=10;3' && "$polybar_path"/launch.sh
@@ -292,13 +292,13 @@ change_terminal 'Iosevka Custom' '9'
 change_xfce_terminal 'Iosevka Custom 9'
 
 # funct SCHEME FONT
-change_geany 'adapta' 'Iosevka Custom 10'
+change_geany 'adaptive' 'Iosevka Custom 10'
 
 # funct THEME ICON CURSOR FONT
 change_appearance 'Adapta-Nokto' 'Luv-Folders-Dark' 'Vimix' 'Noto Sans 9'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'Adapta-Nokto' 'MLC' 'JetBrains Mono' '9' 'menu-icons.xml' && openbox --reconfigure
+obconfig 'Adapta-Nokto' 'MLC' 'JetBrains Mono' '9' 'menu-icons.xml'
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '280' '80' '10x44' 'top-right' 'Iosevka Custom 9' '0'
@@ -308,3 +308,6 @@ change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/d
 
 # Change compositor settings
 compositor 'glx' '0' '14 0.30 -12 -12' 'none 0'
+
+# Restart Openbox
+openbox --reconfigure && openbox --restart

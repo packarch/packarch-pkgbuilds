@@ -295,10 +295,10 @@ change_xfce_terminal 'JetBrainsMono Nerd Font 10'
 change_geany 'mountain' 'JetBrains Mono 10'
 
 # funct THEME ICON CURSOR FONT
-change_appearance 'Kripton' 'Zafiro' 'Fluent-dark' 'Noto Sans 9'
+change_appearance 'Mountain' 'Zafiro' 'Fluent-Dark' 'Noto Sans 9'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'Kripton' 'CMIL' 'JetBrains Mono' '9' 'menu-icons.xml' && openbox --reconfigure
+obconfig 'Mountain' 'CMIL' 'JetBrains Mono' '9' 'menu-icons.xml'
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '280' '80' '19x46' 'top-right' 'JetBrains Mono 10' '4'
@@ -308,3 +308,6 @@ change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/d
 
 # Change compositor settings
 compositor 'glx' '6' '14 0.30 -12 -12' 'none 0'
+
+# Restart Openbox
+openbox --reconfigure && openbox --restart

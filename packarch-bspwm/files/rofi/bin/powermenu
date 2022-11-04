@@ -18,13 +18,13 @@ logout=""
 get_confirmation() {
 	rofi -dmenu -i \
 		 -no-fixed-num-lines \
-		 -p "Are You Sure? : " \
+		 -p "Vous confirmez ?: " \
 		 -theme "$DIR"/rofi/themes/confirm.rasi
 }
 
 # Show message
 show_msg() {
-	rofi -theme "$DIR"/rofi/themes/askpass.rasi -e "Options  -  yes / y / no / n"
+	rofi -theme "$DIR"/rofi/themes/askpass.rasi -e "Options  -  oui / o / non / n"
 }
 
 # Variable passed to rofi
@@ -34,9 +34,9 @@ chosen="$(echo -e "$options" | $rofi_cmd -p "UP - $uptime" -dmenu -selected-row 
 case $chosen in
     $shutdown)
 		ans=$(get_confirmation)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			systemctl poweroff
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg
@@ -44,9 +44,9 @@ case $chosen in
         ;;
     $reboot)
 		ans=$(get_confirmation)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			systemctl reboot
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg
@@ -57,11 +57,11 @@ case $chosen in
         ;;
     $suspend)
 		ans=$(get_confirmation)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			mpc -q pause
 			amixer set Master mute
 			betterlockscreen --suspend
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg
@@ -69,9 +69,9 @@ case $chosen in
         ;;
     $logout)
 		ans=$(get_confirmation)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			bspc quit
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg

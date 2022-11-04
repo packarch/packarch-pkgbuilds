@@ -292,13 +292,13 @@ change_terminal 'Terminus' '9'
 change_xfce_terminal 'Terminus 9'
 
 # funct SCHEME FONT
-change_geany 'adapta' 'Terminus Medium 9'
+change_geany 'forest' 'Terminus Medium 9'
 
 # funct THEME ICON CURSOR FONT
 change_appearance 'Adapta-Nokto-Eta' 'Packarch-Dark' 'Pear' 'Terminus Medium 9'
 
 # funct THEME LAYOUT FONT SIZE (Change margin in funct)
-obconfig 'Adapta-Bitmap' 'CLM' 'Terminus' '9' 'menu-simple.xml' && openbox --reconfigure
+obconfig 'Adapta-Bitmap' 'CLM' 'Terminus' '9' 'menu-simple.xml'
 
 # funct GEOMETRY FONT BORDER (Change colors in funct)
 change_dunst '280' '80' '10x38' 'top-right' 'Terminus Medium 9' '0'
@@ -308,3 +308,6 @@ change_dock && cat "$HOME"/.cache/plank.conf | dconf load /net/launchpad/plank/d
 
 # Change compositor settings
 compositor 'glx' '0' '14 0.30 -12 -12' 'none 0'
+
+# Restart Openbox
+openbox --reconfigure && openbox --restart

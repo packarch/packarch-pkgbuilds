@@ -4,7 +4,7 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Default
-STYLE="bouquet"
+STYLE="wave"
 ddir="$HOME/.config/openbox/rofi/dialogs"
 
 rofi_command="rofi -theme $HOME/.config/openbox/rofi/$STYLE/powermenu.rasi"
@@ -32,13 +32,13 @@ rdialog () {
 rofi -dmenu\
     -i\
     -no-fixed-num-lines\
-    -p "Are You Sure? : "\
+    -p "Vous confirmez ?: "\
     -theme "$ddir/confirm.rasi"
 }
 
 # Display Help
 show_msg() {
-	rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
+	rofi -theme "$ddir/askpass.rasi" -e "Options : oui / non / o / n"
 }
 
 # Variable passed to rofi
@@ -48,9 +48,9 @@ chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-
 case $chosen in
     $shutdown)
 		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			systemctl poweroff
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg
@@ -58,9 +58,9 @@ case $chosen in
         ;;
     $reboot)
 		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			systemctl reboot
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg
@@ -71,11 +71,11 @@ case $chosen in
         ;;
     $suspend)
 		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			mpc -q pause
 			amixer set Master mute
 			betterlockscreen --suspend
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg
@@ -83,9 +83,9 @@ case $chosen in
         ;;
     $logout)
 		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "oui" ]] || [[ $ans == "OUI" ]] || [[ $ans == "o" ]]; then
 			openbox --exit
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "non" ]] || [[ $ans == "NON" ]] || [[ $ans == "n" ]]; then
 			exit
         else
 			show_msg
