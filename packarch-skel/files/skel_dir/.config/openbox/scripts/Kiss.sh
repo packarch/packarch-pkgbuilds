@@ -274,7 +274,7 @@ notify_user() {
 notify_user
 
 # funct WALLPAPER
-set_wallpaper 'bird.png'
+set_wallpaper 'bird.jpg'
 
 # funct STYLE FONT
 change_polybar 'kiss' 'JetBrains Mono:size=10;3' && "$polybar_path"/launch.sh

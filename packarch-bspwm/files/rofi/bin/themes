@@ -116,7 +116,7 @@ case $chosen in
         set_style  'blade' 'Blade' 'Nordic-Folders' 'LyraS' 'blade'
         ;;
     $theme_3)
-        set_style  'bouquet' 'Juno-mirage' 'Luna-Dark' 'Future-dark' 'bouquet'
+        set_style  'bouquet' 'Juno-mirage' 'Luna-Dark' 'Future-Dark' 'bouquet'
         ;;
     $theme_4)
         set_style  'cyberpunk' 'Cyberpunk' 'Packarch-Dark' 'LyraB' 'cyberpunk'
@@ -125,7 +125,7 @@ case $chosen in
         set_style  'dracula' 'Dracula' 'Nordic-Folders' 'Sweet' 'dracula'
         ;;
     $theme_6)
-        set_style  'flowers' 'Flowers' 'Zafiro' 'Fluent-dark' 'flowers'
+        set_style  'flowers' 'Flowers' 'Zafiro' 'Fluent-Dark' 'flowers'
         ;;
     $theme_7)
         set_style  'forest' 'Adapta-Nokto' 'Luv-Folders-Dark' 'Vimix' 'forest'
@@ -134,7 +134,7 @@ case $chosen in
         set_style  'groot' 'Groot' 'Luna-Dark' 'Pear' 'groot'
         ;;
     $theme_9)
-        set_style  'gruvbox' 'Gruvbox' 'Luna-Dark' 'Future-dark' 'gruvbox'
+        set_style  'gruvbox' 'Gruvbox' 'Luna-Dark' 'Future-Dark' 'gruvbox'
         ;;
     $theme_10)
         set_style  'hack' 'Hack' 'Hack' 'LyraB' 'hack'
@@ -143,22 +143,22 @@ case $chosen in
         set_style  'keyboards' 'Sweet-Dark' 'Zafiro-Purple' 'Sweet' 'keyboards'
         ;;
     $theme_12)
-        set_style  'light' 'White' 'Arc-Circle' 'Fluent-dark' 'light'
+        set_style  'light' 'White' 'Arc-Circle' 'Fluent-Dark' 'light'
         ;;
     $theme_13)
-        set_style  'manhattan' 'Manhattan' 'Luv-Folders-Dark' 'Vimix-dark' 'manhattan'
+        set_style  'manhattan' 'Manhattan' 'Luv-Folders-Dark' 'Vimix-Dark' 'manhattan'
         ;;
     $theme_14)
-        set_style  'nordic' 'Nordic' 'Nordic-Folders' 'Qogirr-dark' 'nordic'
+        set_style  'nordic' 'Nordic' 'Nordic-Folders' 'Qogirr-Dark' 'nordic'
         ;;
     $theme_15)
-        set_style  'pastel' 'White' 'Qogir' 'Qogirr-dark' 'pastel'
+        set_style  'pastel' 'White' 'Qogir' 'Qogirr-Dark' 'pastel'
         ;;
     $theme_16)
-        set_style  'rick' 'Rick' 'Zafiro' 'Vimix-dark' 'rick'
+        set_style  'rick' 'Rick' 'Zafiro' 'Vimix-Dark' 'rick'
         ;;
     $theme_17)
-        set_style  'slime' 'Slime' 'Luv-Folders' 'Qogirr-dark' 'slime'
+        set_style  'slime' 'Slime' 'Luv-Folders' 'Qogirr-Dark' 'slime'
         ;;
     $theme_18)
         set_style  'spark' 'Spark' 'Luv-Folders' 'Vimix' 'spark'
