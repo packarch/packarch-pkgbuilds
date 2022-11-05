@@ -1,11 +1,12 @@
 [Desktop Entry]
 Type=Action
-Name=Set as wallpaper
-Icon=view-preview
+Tooltip=Edition
+Name=Edition
 Profiles=profile-zero;
+Icon=document-edit-sign
 
 [X-Action-Profile profile-zero]
-MimeTypes=image/*;
-Exec=feh --bg-fill %f
+MimeTypes=all/allfiles;
+Exec=geany -i %f
 Name=Default profile
 SelectionCount==1
