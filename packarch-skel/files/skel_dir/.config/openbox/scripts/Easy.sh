@@ -274,7 +274,7 @@ notify_user() {
 notify_user
 
 # funct WALLPAPER
-set_wallpaper 'sungarden.png'
+set_wallpaper 'sungarden.jpg'
 
 # funct STYLE FONT
 change_polybar 'easy' 'Iosevka Nerd Font:size=12;4' && "$polybar_path"/launch.sh
