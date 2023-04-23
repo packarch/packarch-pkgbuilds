@@ -6,36 +6,36 @@
 ## A script to get colours from the theme file & deploy it to polybar, alacritty, rofi & dunst.
 
 DIR="$HOME/.config/bspwm"
+JGMENU_DIR="$HOME/.config/jgmenu"
 
 ## Current theme ---------------------------------------------#
-source "$DIR"/themes/current.bash
+## source "$DIR"/themes/current.bash
 
-## Get colors
 getcolors () {
-	FOREGROUND="$foreground"
-	BACKGROUND="$background"
-	CURSOR="$cursor"
-	BLACK="$color0"
-	RED="$color1"
-	GREEN="$color2"
-	YELLOW="$color3"
-	BLUE="$color4"
-	MAGENTA="$color5"
-	CYAN="$color6"
-	WHITE="$color7"
-	ALTBLACK="$color8"
-	ALTRED="$color9"
-	ALTGREEN="$color10"
-	ALTYELLOW="$color11"
-	ALTBLUE="$color12"
-	ALTMAGENTA="$color13"
-	ALTCYAN="$color14"
-	ALTWHITE="$color15"
+	FOREGROUND="$(xrdb -query | grep 'foreground:'| awk '{print $NF}')"
+	BACKGROUND="$(xrdb -query | grep 'background:'| awk '{print $NF}')"
+	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{print $NF}')"
+	BLACK="$(xrdb -query | grep 'color0:'| awk '{print $NF}')"
+	RED="$(xrdb -query | grep 'color1:'| awk '{print $NF}')"
+	GREEN="$(xrdb -query | grep 'color2:'| awk '{print $NF}')"
+	YELLOW="$(xrdb -query | grep 'color3:'| awk '{print $NF}')"
+	BLUE="$(xrdb -query | grep 'color4:'| awk '{print $NF}')"
+	MAGENTA="$(xrdb -query | grep 'color5:'| awk '{print $NF}')"
+	CYAN="$(xrdb -query | grep 'color6:'| awk '{print $NF}')"
+	WHITE="$(xrdb -query | grep 'color7:'| awk '{print $NF}')"
+	ALTBLACK="$(xrdb -query | grep 'color8:'| awk '{print $NF}')"
+	ALTRED="$(xrdb -query | grep 'color9:'| awk '{print $NF}')"
+	ALTGREEN="$(xrdb -query | grep 'color10:'| awk '{print $NF}')"
+	ALTYELLOW="$(xrdb -query | grep 'color11:'| awk '{print $NF}')"
+	ALTBLUE="$(xrdb -query | grep 'color12:'| awk '{print $NF}')"
+	ALTMAGENTA="$(xrdb -query | grep 'color13:'| awk '{print $NF}')"
+	ALTCYAN="$(xrdb -query | grep 'color14:'| awk '{print $NF}')"
+	ALTWHITE="$(xrdb -query | grep 'color15:'| awk '{print $NF}')"
 }
 
 ## Write polybar colors file with current theme colors
 bspbar () {
-	cat > "$DIR"/polybar/colors <<- EOF	
+	cat > $DIR/polybar/colors <<- EOF	
 	[color]
 
 	FOREGROUND = ${FOREGROUND}
@@ -132,6 +132,66 @@ bspdunst () {
 	_EOF_
 }
 
+bspjgmenu () {
+	cat > $JGMENU_DIR/jgmenurc <<- EOF	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;    Copyright © 2022 To Cyb3rTh1eveZ																	 
+;;																										 
+;;     ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ ████████╗██╗  ██╗ ██╗███████╗██╗   ██╗███████╗███████╗	 
+;;    ██╔════╝╚██╗ ██╔╝██╔══██╗╚════██╗██╔══██╗╚══██╔══╝██║  ██║███║██╔════╝██║   ██║██╔════╝╚══███╔╝     
+;;    ██║      ╚████╔╝ ██████╔╝ █████╔╝██████╔╝   ██║   ███████║╚██║█████╗  ██║   ██║█████╗    ███╔╝      
+;;    ██║       ╚██╔╝  ██╔══██╗ ╚═══██╗██╔══██╗   ██║   ██╔══██║ ██║██╔══╝  ╚██╗ ██╔╝██╔══╝   ███╔╝       
+;;    ╚██████╗   ██║   ██████╔╝██████╔╝██║  ██║   ██║   ██║  ██║ ██║███████╗ ╚████╔╝ ███████╗███████╗     
+;;     ╚═════╝   ╚═╝   ╚═════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝     
+;;																										 
+;;																										 
+;;																										 
+;;    Copyright (C) Mahmoud Mohamed (00xWolf)  <https://github.com/mmsaeed509>								 
+;;    LICENSE © GNU-GPL3
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+at_pointer           = 1
+stay_alive           = 1
+csv_cmd              = pmenu
+csv_no_dirs          = 0
+tint2_look           = 0
+terminal_exec        = bspterm -float &
+terminal_args        = 
+menu_width           = 200
+menu_padding_top     = 5
+menu_padding_right   = 5
+menu_padding_bottom  = 5
+menu_padding_left    = 5
+menu_radius          = 15
+menu_border          = 2
+menu_halign          = left
+sub_hover_action     = 1
+item_margin_y        = 3
+item_height          = 38
+item_padding_x       = 10
+item_radius          = 7
+item_border          = 0
+sep_height           = 5
+font                 = JetBrainsMono Nerd Font 12px
+icon_size            = 15
+icon_theme           = ${ICONS}
+arrow_string         = 
+
+;; colors ;;
+color_menu_bg        = ${BACKGROUND} 100
+color_menu_border    = ${BLUE}
+color_norm_bg        = ${BACKGROUND} 0
+color_norm_fg        = ${FOREGROUND} 100
+color_sel_bg         = ${FOREGROUND} 50
+color_sel_fg         = ${FOREGROUND} 100
+color_sep_fg         = ${FOREGROUND} 40       
+
+
+	EOF
+}
+
 ## Execute functions and run main 
 main () {
 	getcolors
@@ -139,6 +199,7 @@ main () {
 	bspterm
 	bsprofi
 	bspdunst
+	bspjgmenu
 }
 
 main

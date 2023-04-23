@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+##########################################################################################################
+#																										 
+#    Copyright © 2022 To Cyb3rTh1eveZ																	 
+#																										 
+#     ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ ████████╗██╗  ██╗ ██╗███████╗██╗   ██╗███████╗███████╗	 
+#    ██╔════╝╚██╗ ██╔╝██╔══██╗╚════██╗██╔══██╗╚══██╔══╝██║  ██║███║██╔════╝██║   ██║██╔════╝╚══███╔╝     
+#    ██║      ╚████╔╝ ██████╔╝ █████╔╝██████╔╝   ██║   ███████║╚██║█████╗  ██║   ██║█████╗    ███╔╝      
+#    ██║       ╚██╔╝  ██╔══██╗ ╚═══██╗██╔══██╗   ██║   ██╔══██║ ██║██╔══╝  ╚██╗ ██╔╝██╔══╝   ███╔╝       
+#    ╚██████╗   ██║   ██████╔╝██████╔╝██║  ██║   ██║   ██║  ██║ ██║███████╗ ╚████╔╝ ███████╗███████╗     
+#     ╚═════╝   ╚═╝   ╚═════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝     
+#																										 
+#																										 
+#																										 
+#    Copyright (C) Mahmoud Mohamed (00xWolf)  <https://github.com/mmsaeed509>								 
+#    LICENSE © GNU-GPL3																					 
+#																										 
+##########################################################################################################
+
+
+# launch a custom Polybar if it exists  #
+Theme=$(head ~/.config/bspwm/selectedThemeName)
+
+# Files and Directories #
+CAVADIR="$HOME/.config/cava"
+
+# Launch Polybar with selected style #
+writecava() {
+	
+if [[ "$Theme" == "satanic" ]]; then
+	cat > $CAVADIR/config <<- EOF	
+	[color]
+	gradient = 1
+	gradient_color_8 = '#e9e50d'
+	gradient_color_7 = '#e97c0d'
+	gradient_color_6 = '#e9360d'
+	gradient_color_5 = '#c71d14'
+	gradient_color_4 = '#8f1912'
+	gradient_color_3 = '#400200'
+	gradient_color_2 = '#360200'
+	gradient_color_1 = '#2d0200'
+	EOF
+	
+elif [[ "$Theme" == "emilia" ]]; then			
+	cat > $CAVADIR/config <<- EOF	
+	[color]
+	gradient = 1
+	gradient_color_1 = '#94e2d5'
+	gradient_color_2 = '#89dceb'
+	gradient_color_3 = '#74c7ec'
+	gradient_color_4 = '#89b4fa'
+	gradient_color_5 = '#cba6f7'
+	gradient_color_6 = '#f5c2e7'
+	gradient_color_7 = '#eba0ac'
+	gradient_color_8 = '#f38ba8'
+	EOF
+fi
+}
+
+# launch polybar #
+writecava

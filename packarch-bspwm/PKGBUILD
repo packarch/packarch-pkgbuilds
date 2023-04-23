@@ -36,11 +36,9 @@ package() {
 
 	mkdir -p "$_skeldir" && mkdir -p "$_configdir" && mkdir -p "$_bspwmdir"
 
-	# Copy networkmanager config
-	cp -r ${srcdir}/networkmanager-dmenu	"$_configdir"
-
 	# Copy window manager configs
 	cp -r ${srcdir}/alacritty 			"$_bspwmdir"
+	cp -r ${srcdir}/assets 			"$_bspwmdir"
 	cp -r ${srcdir}/bin 				"$_bspwmdir"
 	cp -r ${srcdir}/polybar 			"$_bspwmdir"
 	cp -r ${srcdir}/rofi 				"$_bspwmdir"
@@ -52,6 +50,7 @@ package() {
 	install -Dm 644 dunstrc   			"$_bspwmdir"/dunstrc
 	install -Dm 644 picom.conf   		"$_bspwmdir"/picom.conf
 	install -Dm 644 keybindings   		"$_bspwmdir"/keybindings
+	install -Dm 644 selectedThemeName 	"$_bspwmdir"/selectedThemeName
 	install -Dm 644 sxhkdrc				"$_bspwmdir"/sxhkdrc
 	install -Dm 644 xsettingsd			"$_bspwmdir"/xsettingsd
 }

@@ -16,12 +16,12 @@ PKGDIR="$DIR/packages_aur"
 LIST=(mkinitcpio-openswap
 	  azote
 	  eww-git
+	  ckbcomp
 	  catppuccin-gtk-theme-frappe
 	  catppuccin-gtk-theme-macchiato
 	  catppuccin-gtk-theme-mocha
 	  papirus-folders-catppuccin-git
 	  autofs
-	  ckbcomp
 	  cava
 	  ksuperkey
 	  betterlockscreen

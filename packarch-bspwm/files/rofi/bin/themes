@@ -7,47 +7,29 @@ CFGDIR="$HOME/.config"
 BSPDIR="$CFGDIR/bspwm"
 THEMEDIR="$BSPDIR/themes"
 XFILE="$BSPDIR/xsettingsd"
+XRES="$HOME/.Xresources.d"
 geany_path="$HOME/.config/geany"
+BSP="$HOME/.config/bspwm"
 
 rofi_cmd="rofi -theme $BSPDIR/rofi/themes/themes.rasi"
 
 # Themes
-random=" Random"
-default=" Default"
-theme_1=" Beach"
-theme_2=" Blade"
-theme_3=" Bouquet"
-theme_4=" Cyberpunk"
-theme_5=" Dracula"
-theme_6=" Flowers"
-theme_7=" Forest"
-theme_8=" Groot"
-theme_9=" Gruvbox"
-theme_10=" Hack"
-theme_11=" Keyboards"
-theme_12=" Light"
-theme_13=" Manhattan"
-theme_14=" Nordic"
-theme_15=" Pastel"
-theme_16=" Rick"
-theme_17=" Slime"
-theme_18=" Spark"
-theme_19=" Tealize"
-theme_20=" Wave"
-theme_21=" Catppucinn"
-theme_22=" Satanic"
+theme_1=" Cyberpunk"
+theme_2=" Wave"
+theme_3=" Catppucinn"
+theme_4=" Satanic"
+theme_5=" Emilia"
+theme_6=" Forest"
+theme_7=" Aline"
 
 # Variable passed to rofi
-options="$random\n$default\n\n$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\
-\n$theme_6\n$theme_7\n$theme_8\n$theme_9\n$theme_10\
-\n$theme_11\n$theme_12\n$theme_13\n$theme_14\n$theme_15\
-\n$theme_16\n$theme_17\n$theme_18\n$theme_19\n$theme_20\n$theme_21\n$theme_22"
+options="$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\n$theme_6\n$theme_7"
 
 ## Apply theme
 set_style() {
 	# apply color-scheme
-	cat "$THEMEDIR"/${1}.bash > "$THEMEDIR"/current.bash
-	echo -e "\n# Don't Delete This File" >> "$THEMEDIR"/current.bash
+	# ----- apply color-scheme ----- #
+	cat "$BSP"/themes/${1} > "$XRES"/colors
 	
 	# set gtk theme, icons and cursor
 	
@@ -70,109 +52,50 @@ set_style() {
 	#sed -i -e "s/file=.*/file=\/usr\/share\/backgrounds\/${1}.jpg/g" ${CFGDIR}/nitrogen/bg-saved.cfg
 	
 	# set geany
-	sed -i -e "s/color_scheme=.*/color_scheme=$5.conf/g" ${geany_path}/geany.conf
+	sed -i -e "s/color_scheme=.*/color_scheme=$1.conf/g" ${geany_path}/geany.conf
 	#sed -i -e "s/editor_font=.*/editor_font=$2/g" 			${geany_path}/geany.conf
 	
-	# reload bspwm
+	# ----- launch Polybar ----- #
+	echo "$1">~/.config/bspwm/selectedThemeName
+	
+	# ----- apply color-scheme ----- #
+	cat "$BSP"/themes/${1} > "$XRES"/colors
+	
+	## Change conkeww colors file.
+	sed -i "s/colors\/color-.*/colors\/color-${1}.yuck\")/g" $HOME/.config/conkeww/eww.yuck
+	
+	# set rofi launcher and theme selector image
+	sed -i "s/background-image:.*/background-image: url(\"~\/.config\/bspwm\/assets\/launcher-${1}.webp\", width);/g" ${HOME}/.config/bspwm/rofi/themes/launcher.rasi
+	sed -i "s/background-image:.*/background-image: url(\"~\/.config\/bspwm\/assets\/launcher-${1}.webp\", width);/g" ${HOME}/.config/bspwm/rofi/themes/themes.rasi
+    
+    # reload bspwm
+    pkill polybar
 	bspc wm -r
 	
 }
 
-## Apply random theme
-random_theme() {
-	## Set you wallpaper directory here.
-	WALLDIR="`xdg-user-dir PICTURES`/wallpapers"
-	WALFILE="$HOME/.cache/wal/colors.sh"
-	
-	if [[ `which wal` ]]; then
-		dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/hourglass.png "Generating Colorscheme. Please wait..."
-		wal -q -n -s -t -e -i "$WALLDIR"
-		if [[ "$?" != 0 ]]; then
-			dunstify -u low --replace=699 -i /usr/share/packarch/icons/dunst/palette.png "Failed to generate colorscheme."
-			exit
-		fi
-		if [[ -f "$WALFILE" ]]; then
-			cat "$WALFILE" > "$THEMEDIR"/current.bash
-			echo -e "\n# Don't Delete This File" >> "$THEMEDIR"/current.bash
-			bspc wm -r
-		fi
-	else
-		dunstify -u normal --replace=699 -i /usr/share/packarch/icons/dunst/palette.png "'pywal' is not installed."
-	fi
-}
-
+##              "${1} bg+themeName+conkeww"  "gtk theme"  "$3 icons"  "cursor"  "polybar"   "geany"
 chosen="$(echo -e "$options" | $rofi_cmd -p "Available themes : (20 + ∞)" -dmenu -selected-row 0)"
 case $chosen in
-    $random)
-        random_theme
-        ;;
-    $default)
-        set_style  'nord' 'Arc-Dark' 'Arc-Circle' 'Qogirr' 'nordic'
-        ;;
     $theme_1)
-        set_style  'beach' 'Arc-Lighter' 'Arc-Circle' 'Fluent' 'beach'
+        set_style  'cyberpunk' 'Dracula' 'Luna-Purple-Dark' 'LyraB'
         ;;
     $theme_2)
-        set_style  'blade' 'Blade' 'Nordic-Folders' 'LyraS' 'blade'
+        set_style  'wave' 'Wave' 'Luv-Folders-Dark' 'Vimix'
         ;;
     $theme_3)
-        set_style  'bouquet' 'Juno-mirage' 'Luna-Dark' 'Future-Dark' 'bouquet'
+        set_style  'catppuccin' 'Catppuccin-Frappe-Teal' 'Papirus-Dark' 'Vimix-Dark'
         ;;
     $theme_4)
-        set_style  'cyberpunk' 'Cyberpunk' 'Packarch-Dark' 'LyraB' 'cyberpunk'
+        set_style  'satanic' 'Satanic' 'Luna-Red-Dark' 'LyraS'
         ;;
     $theme_5)
-        set_style  'dracula' 'Dracula' 'Nordic-Folders' 'Sweet' 'dracula'
+        set_style  'emilia' 'Catppuccin-Mocha-Red' 'Luna-Antidote-Dark' 'Vimix-Dark'
         ;;
     $theme_6)
-        set_style  'flowers' 'Flowers' 'Zafiro' 'Fluent-Dark' 'flowers'
+        set_style  'forest' 'Adapta-Nokto' 'Luna-Green-Dark' 'Pear'
         ;;
     $theme_7)
-        set_style  'forest' 'Adapta-Nokto' 'Luv-Folders-Dark' 'Vimix' 'forest'
+        set_style  'aline' 'Catppuccin-Latte-Mauve' 'Win11' 'Sweet'
         ;;
-    $theme_8)
-        set_style  'groot' 'Groot' 'Luna-Dark' 'Pear' 'groot'
-        ;;
-    $theme_9)
-        set_style  'gruvbox' 'Gruvbox' 'Luna-Dark' 'Future-Dark' 'gruvbox'
-        ;;
-    $theme_10)
-        set_style  'hack' 'Hack' 'Hack' 'LyraB' 'hack'
-        ;;
-    $theme_11)
-        set_style  'keyboards' 'Sweet-Dark' 'Zafiro-Purple' 'Sweet' 'keyboards'
-        ;;
-    $theme_12)
-        set_style  'light' 'White' 'Arc-Circle' 'Fluent-Dark' 'light'
-        ;;
-    $theme_13)
-        set_style  'manhattan' 'Manhattan' 'Luv-Folders-Dark' 'Vimix-Dark' 'manhattan'
-        ;;
-    $theme_14)
-        set_style  'nordic' 'Nordic' 'Nordic-Folders' 'Qogirr-Dark' 'nordic'
-        ;;
-    $theme_15)
-        set_style  'pastel' 'White' 'Qogir' 'Qogirr-Dark' 'pastel'
-        ;;
-    $theme_16)
-        set_style  'rick' 'Rick' 'Zafiro' 'Vimix-Dark' 'rick'
-        ;;
-    $theme_17)
-        set_style  'slime' 'Slime' 'Luv-Folders' 'Qogirr-Dark' 'slime'
-        ;;
-    $theme_18)
-        set_style  'spark' 'Spark' 'Luv-Folders' 'Vimix' 'spark'
-        ;;
-    $theme_19)
-        set_style  'tealize' 'Juno-palenight' 'Luv-Folders-Dark' 'Vimix' 'tealize'
-        ;;
-    $theme_20)
-        set_style  'wave' 'Wave' 'Luv-Folders-Dark' 'Vimix' 'wave'
-        ;;
-    $theme_21)
-        set_style  'catppucinn' 'Catppuccin-Frappe-Purple' 'Papirus-Dark' 'Vimix-Dark' 'catppuccin'
-        ;;
-    $theme_22)
-        set_style  'satanic' 'Satanic' 'Luna-Red-Dark' 'LyraS' 'satanic'
-        ;;    
 esac

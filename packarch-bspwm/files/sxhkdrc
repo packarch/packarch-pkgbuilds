@@ -7,15 +7,12 @@
 
 # Terminal (alacritty)
 super + Return
-	bspterm
+	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml
 
 # Terminal (floating)
 super + shift + Return
-	bspterm --float
+	alacritty --class termfloat --config-file ~/.config/bspwm/alacritty/alacritty.yml
 
-# Rofi Themes Menu
-super + t
-	sh ~/.config/bspwm/rofi/bin/themes
 
 ##---------- Rofi Launcher & Menus ----------##
 
@@ -27,15 +24,22 @@ alt + F1
 super + n
 	nmd
 
+# Take screenshot in 5 second
+super + shift + b
+	~/.config/bspwm/bin/opacityterm --yes
+	
+super + shift + n
+	~/.config/bspwm/bin/opacityterm --no
+
 # Rofi Menus/Applets
-super + {w,m,x,r,s}
-	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot}
+super + {w,m,x,r,s,t}
+	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,themes}
 
 ##---------- Applications ----------##
 
 # Launch Apps
 super + {p,f,g,v}
-	{pcmanfm,firefox,geany,virtualbox}
+	{thunar,firefox,geany,virtualbox}
 
 # Terminal Apps
 ctrl + alt + {v,r,h}
@@ -49,23 +53,19 @@ ctrl + alt + l
 
 # Take a screenshot
 Print
-	takeshot --now
+	~/.config/bspwm/bin/takeshot --win
 	
 # Take screenshot in 5 second
 alt + Print	
-	takeshot --in5
+	~/.config/bspwm/bin/takeshot --in5
 
 # Take screenshot in 10 second
 shift + Print	
-	takeshot --in10
-
-# Take screenshot of active window
-ctrl + Print
-	takeshot --win
+	~/.config/bspwm/bin/takeshot --in10
 
 # Take screenshot of area
 ctrl + alt + Print
-	takeshot --area
+	~/.config/bspwm/bin/takeshot --area
 
 # Brighness control
 XF86MonBrightness{Up,Down}
@@ -176,6 +176,6 @@ super + button{4,5}
     
 # Restore original gap
 super + button{2}
-    bspc config top_padding 30; bspc config -d focused window_gap 10	
+	bspc config top_padding 0; bspc config bottom_padding 40; bspc config -d focused window_gap 10
 
 ##---------- EOF ----------##
