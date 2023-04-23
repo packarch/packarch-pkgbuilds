@@ -1,8 +1,8 @@
 #!/bin/sh
 
-USER="Antidote1911"
+USER=""
 # You can get your Personal access tokens from here : https://github.com/settings/tokens #
-TOKEN="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"
+TOKEN=""
 
 notifications=$(echo "user = \"$USER:$TOKEN\"" | curl -sf -K- https://api.github.com/notifications | jq ".[].unread" | grep -c true)
 
