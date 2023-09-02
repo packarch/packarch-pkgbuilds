@@ -1,7 +1,7 @@
 # Maintainer: Fabrice Corraire <antidote1911@gmail.com>
 
 pkgname=packarch-rmatrix
-pkgver=e12e7eb
+pkgver=422b092
 pkgrel=1
 pkgdesc="Rust port of a curses-based 'Matrix'-like screen"
 arch=('any')

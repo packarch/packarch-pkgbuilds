@@ -14,7 +14,6 @@ DIR="$(pwd)"
 PKGDIR="$DIR/packages_aur"
 
 LIST=(mkinitcpio-openswap
-	  azote
 	  eww-git
 	  ckbcomp
 	  catppuccin-gtk-theme-frappe
